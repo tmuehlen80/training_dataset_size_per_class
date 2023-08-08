@@ -5,26 +5,26 @@
 \usepackage{geometry} % This package allows the editing of the page layout
 \usepackage{amsmath}  % This package allows the use of a large range of mathematical formula, commands, and symbols
 \usepackage{graphicx}  % This package allows the importing of images
-\usepackage{algorithm2e}
+%\usepackage{algorithm2e}
 \usepackage{amsfonts} 
 \usepackage{graphicx}
-\usepackage{makecell}
+%\usepackage{makecell}
 \usepackage{verbatim}
 %\usepackage{mathtools}
 %\usepackage{mathabx} 
 %\usepackage{float}
 \usepackage{subcaption}
 %\usepackage[caption = false]{subfig}
-\usepackage[nottoc]{tocbibind}
+%\usepackage[nottoc]{tocbibind}
 % In order to get bibtex running:
 % https://howtoinstall.co/en/texlive-bibtex-extra
 % youtube video on compiling latex in vscode
 % https://www.youtube.com/watch?v=QK_yc9qSa2w
 \title{Training dataset size prediction when adopting image counts individually per class.}
-\author{Thomas Mühlenstädt}
+\author{Thomas Mühlenstädt, Jelena Frtunikj}
 
 \graphicspath{ {./plots/} }
-\RestyleAlgo{ruled}
+%\RestyleAlgo{ruled}
 
 %
 \newcommand{\nosemic}{\SetEndCharOfAlgoLine{\relax}}% Drop semi-colon ;
@@ -124,81 +124,81 @@ Inspired by the fact that power law scaling of the error w.r.t. data suggests th
 
 
 
-\begin{algorithm}
-    \SetKwInOut{Input}{input}\SetKwInOut{Initialize}{initialize}\SetKwInOut{Optimize}{optimize}
-    \caption{Mixture Design creation} \label{alg:one}
-    \nosemic
-    \Input{\;
-    \dosemic
-    \pushline
-        Define $n_{doe} \in \mathbb{N}$: The number of rows to be generated\;
-        Define $n_{cmax} \in \mathbb{N}$: The maximum number of training images in each class\;
-        Define $n_{opt} \in \mathbb{N}$: The maximum number of iterations used for optimizing the DoE\;
-        Define $n_{candidate} \in \mathbb{N}$: The batch size for generating candidate mixture datapoints\;    
-    }  
-    \Initialize{\;
-    \dosemic
-    Intialize $\tilde{doe}$ as empty dataframe\;
-    Set $n_{doe} = 0$\;
-    \While{$\tilde{n}_{doe} < n_{doe}$}{
-        Create a batch of candidate mixture datapoints $candidates$ of size $n_{candidate}$\;
-        For each candidate point: Delete candidate point, if for any class $c$ $n^{c} > n_{cmax}$\;
-        Add all remaining rows of $candidates$ to $\tilde{doe}$\;
-        set $n_{doe} = $ number of rows of $doe$ \;
-    }
-    Set $doe$ to the first $n_{doe}$ rows of $\tilde{doe}$\;
-    }
-    \Optimize{\;
-    \dosemic
-    Set $doe_{opt} = doe$\;
-    Set $Mm = \min_{t \neq b}(\|x_t - x_b\|)$ \;
-    \For{$i \leq n_{opt}$}{
-        Set $\tilde{doe} = doe_{opt}$\;
-        Determine point pair $k \neq j$ with $\|x_k - x_j\| = \min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|) $\;
-        Create a candidate point $\tilde{x}$ with $max(x^{c}) \leq n_{cmax}$ (fullfilling class constraints)\;
-        In $\tilde{doe}$, replace point $x_k$ with $\tilde{x}$\;
-        \If{$\min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|) > Mm$}{
-            Set $doe_{opt} = \tilde{doe}$\;
-            Set $Mm = \min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|)$\;
-        }
-    }
-    }
-\end{algorithm}
+% \begin{algorithm}
+%     \SetKwInOut{Input}{input}\SetKwInOut{Initialize}{initialize}\SetKwInOut{Optimize}{optimize}
+%     \caption{Mixture Design creation} \label{alg:one}
+%     \nosemic
+%     \Input{\;
+%     \dosemic
+%     \pushline
+%         Define $n_{doe} \in \mathbb{N}$: The number of rows to be generated\;
+%         Define $n_{cmax} \in \mathbb{N}$: The maximum number of training images in each class\;
+%         Define $n_{opt} \in \mathbb{N}$: The maximum number of iterations used for optimizing the DoE\;
+%         Define $n_{candidate} \in \mathbb{N}$: The batch size for generating candidate mixture datapoints\;    
+%     }  
+%     \Initialize{\;
+%     \dosemic
+%     Intialize $\tilde{doe}$ as empty dataframe\;
+%     Set $n_{doe} = 0$\;
+%     \While{$\tilde{n}_{doe} < n_{doe}$}{
+%         Create a batch of candidate mixture datapoints $candidates$ of size $n_{candidate}$\;
+%         For each candidate point: Delete candidate point, if for any class $c$ $n^{c} > n_{cmax}$\;
+%         Add all remaining rows of $candidates$ to $\tilde{doe}$\;
+%         set $n_{doe} = $ number of rows of $doe$ \;
+%     }
+%     Set $doe$ to the first $n_{doe}$ rows of $\tilde{doe}$\;
+%     }
+%     \Optimize{\;
+%     \dosemic
+%     Set $doe_{opt} = doe$\;
+%     Set $Mm = \min_{t \neq b}(\|x_t - x_b\|)$ \;
+%     \For{$i \leq n_{opt}$}{
+%         Set $\tilde{doe} = doe_{opt}$\;
+%         Determine point pair $k \neq j$ with $\|x_k - x_j\| = \min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|) $\;
+%         Create a candidate point $\tilde{x}$ with $max(x^{c}) \leq n_{cmax}$ (fullfilling class constraints)\;
+%         In $\tilde{doe}$, replace point $x_k$ with $\tilde{x}$\;
+%         \If{$\min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|) > Mm$}{
+%             Set $doe_{opt} = \tilde{doe}$\;
+%             Set $Mm = \min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|)$\;
+%         }
+%     }
+%     }
+% \end{algorithm}
     
 
 
 
 
-\begin{algorithm}
-\SetKwInOut{Input}{input}
-\caption{Data generation}\label{alg:two}
-\nosemic
-\Input{ \;
-\dosemic
-\pushline
-    Choose an image classification dataset\;
-    Choose a network architecture $f_{\theta}(x)$ suitable for the chosen image classification\;
-    Define a sequence $subsets$ of growing integers between $0$ and $n_{train-max}$\; 
-    Define $n_{repeat} \in \mathbb{N}$: The number of rows to be generated per $s \in subsets$\;
-    Define $e_{max} \in \mathbb{N}$: The maximum number of epochs to train a network \;
-    Define a sequence $e_{check}$ with elements $c \in \mathbb{N}, c \le e_{max}$: The epochs where to evaluate performance of 
-}
-\For{$s \in subsets$}{
-    Generate mixture design $D_s$ for subset size $s$ with $n_{repeat}$ rows\;
-    \For{$i \in (0, \dots,  n_{repeat} - 1)$}{
-        Generate training dataset $T_{i, s}$according to row $D_{s, i}$\;
-        Initialize network $f_{\theta}$\;
-        \For{$e \in (0, \dots, e_{max})$}{
-            Train network $f_{\theta}$ for one epoch\;
-            \If{$e \in check_e$}{
-                Evaluate the performance of $f_{\theta}$ on the test dataset\;
-                Write the evaluation results (losses, metrics) to a logger\;
-            }
-        }
+% \begin{algorithm}
+% \SetKwInOut{Input}{input}
+% \caption{Data generation}\label{alg:two}
+% \nosemic
+% \Input{ \;
+% \dosemic
+% \pushline
+%     Choose an image classification dataset\;
+%     Choose a network architecture $f_{\theta}(x)$ suitable for the chosen image classification\;
+%     Define a sequence $subsets$ of growing integers between $0$ and $n_{train-max}$\; 
+%     Define $n_{repeat} \in \mathbb{N}$: The number of rows to be generated per $s \in subsets$\;
+%     Define $e_{max} \in \mathbb{N}$: The maximum number of epochs to train a network \;
+%     Define a sequence $e_{check}$ with elements $c \in \mathbb{N}, c \le e_{max}$: The epochs where to evaluate performance of 
+% }
+% \For{$s \in subsets$}{
+%     Generate mixture design $D_s$ for subset size $s$ with $n_{repeat}$ rows\;
+%     \For{$i \in (0, \dots,  n_{repeat} - 1)$}{
+%         Generate training dataset $T_{i, s}$according to row $D_{s, i}$\;
+%         Initialize network $f_{\theta}$\;
+%         \For{$e \in (0, \dots, e_{max})$}{
+%             Train network $f_{\theta}$ for one epoch\;
+%             \If{$e \in check_e$}{
+%                 Evaluate the performance of $f_{\theta}$ on the test dataset\;
+%                 Write the evaluation results (losses, metrics) to a logger\;
+%             }
+%         }
 
-    }
-}
-\end{algorithm}
+%     }
+% }
+% \end{algorithm}
 
 
 \section{scaling law model fitting}
@@ -283,37 +283,37 @@ Inspired by the fact that power law scaling of the error w.r.t. data suggests th
     \label{fig:accuracy_vs_epoch_by_subset_size}
 \end{figure}
 
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{|r|c|c|c|c|c|c|} 
-     \hline
-     short description & no & linear combination & train loss & test loss & train acc $r^2$ & test acc $r^2$\\ 
-     \hline
-      full model & $0$ & $\beta_e x_{epoch} + \sum_{i = 1}^c \beta_c n_c$& 0.00252 & 0.00262 & $87.8\%$ & $87.4\%$ \\ 
-     \hline
-     \makecell{full model  \\ epoch squared} & $1$& $\beta_e x_{epoch} +\beta_{e^2} x_{epoch}^2 + \sum_{i = 1}^c \beta_c n_c$& 0.00203 & 0.00212 & $90.1\%$ & $89.8\%$ \\ 
-    \hline
-    $total_n$ and epoch & $2$&$\beta_e x_{epoch} + \beta_n n_{total}$ & 0.00262 & 0.00251 & $87.2\%$ & $87.9\%$ \\ 
-   \hline
-   \makecell{$total_n$ and \\epoch squared} &$3$& $\beta_e x_{epoch} +\beta_{e^2} x_{epoch}^2+ \beta_n n_{total}$ & 0.00259 & 0.00249 & $87.4\%$ & $88.0\%$ \\ 
-   \hline
-   \end{tabular}
-    \caption{Powerlaw model overview.}
-    \label{table:model_overview}
-\end{table}
+% \begin{table}[h!]
+%     \centering
+%     \begin{tabular}{|r|c|c|c|c|c|c|} 
+%      \hline
+%      short description & no & linear combination & train loss & test loss & train acc $r^2$ & test acc $r^2$\\ 
+%      \hline
+%       full model & $0$ & $\beta_e x_{epoch} + \sum_{i = 1}^c \beta_c n_c$& 0.00252 & 0.00262 & $87.8\%$ & $87.4\%$ \\ 
+%      \hline
+%      \makecell{full model  \\ epoch squared} & $1$& $\beta_e x_{epoch} +\beta_{e^2} x_{epoch}^2 + \sum_{i = 1}^c \beta_c n_c$& 0.00203 & 0.00212 & $90.1\%$ & $89.8\%$ \\ 
+%     \hline
+%     $total_n$ and epoch & $2$&$\beta_e x_{epoch} + \beta_n n_{total}$ & 0.00262 & 0.00251 & $87.2\%$ & $87.9\%$ \\ 
+%    \hline
+%    \makecell{$total_n$ and \\epoch squared} &$3$& $\beta_e x_{epoch} +\beta_{e^2} x_{epoch}^2+ \beta_n n_{total}$ & 0.00259 & 0.00249 & $87.4\%$ & $88.0\%$ \\ 
+%    \hline
+%    \end{tabular}
+%     \caption{Powerlaw model overview.}
+%     \label{table:model_overview}
+% \end{table}
 
-\begin{table}[h!]
-    \centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-        a &    b &    c &  plane &  car &  bird &  cat &  deer &  dog &  frog &  horse &  ship &  truck &  epoch &  epoch**2 \\
-    \hline
-     -0.18 & 0.39 & 0.58 &   0.44 & 0.38 &  0.36 & 0.21 &  0.36 & 0.33 &  0.36 &   0.45 &  0.28 &   0.30 &   2.46 &     -1.79 \\
-    \hline
-\end{tabular}
-\caption{Estimated parameters for model (1).}
-\label{table:param_values_full_model_epoch_sq}
-\end{table}
+% \begin{table}[h!]
+%     \centering
+% \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+% \hline
+%         a &    b &    c &  plane &  car &  bird &  cat &  deer &  dog &  frog &  horse &  ship &  truck &  epoch &  epoch**2 \\
+%     \hline
+%      -0.18 & 0.39 & 0.58 &   0.44 & 0.38 &  0.36 & 0.21 &  0.36 & 0.33 &  0.36 &   0.45 &  0.28 &   0.30 &   2.46 &     -1.79 \\
+%     \hline
+% \end{tabular}
+% \caption{Estimated parameters for model (1).}
+% \label{table:param_values_full_model_epoch_sq}
+% \end{table}
 
 \begin{table}[h!]
 \centering
@@ -445,8 +445,8 @@ Inspired by the fact that power law scaling of the error w.r.t. data suggests th
 \section{Discussion summary}
 
 \pagebreak
-\bibliographystyle{ieeetr}
-\bibliography{lit}
+%\bibliographystyle{ieeetr}
+%\bibliography{lit}
 
 \section*{Appendix}
 
