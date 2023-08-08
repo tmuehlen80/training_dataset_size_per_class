@@ -1,0 +1,95 @@
+\begin{thebibliography}{10}
+
+\bibitem{mahmood2022data}
+R.~Mahmood, J.~Lucas, D.~Acuna, D.~Li, J.~Philion, J.~M. Alvarez, Z.~Yu,
+  S.~Fidler, and M.~T. Law, ``How much more data do i need? estimating
+  requirements for downstream tasks,'' 2022.
+
+\bibitem{cho2016data}
+J.~Cho, K.~Lee, E.~Shin, G.~Choy, and S.~Do, ``How much data is needed to train
+  a medical image deep learning system to achieve necessary high accuracy?,''
+  2016.
+
+\bibitem{Figueroa2012PredictingSampleSizeForClass}
+R.~Figueroa, Q.~Zeng-Treitler, S.~Kandula, and L.~Ngo, ``Predicting sample size
+  required for classification performance,'' {\em BMC medical informatics and
+  decision making}, vol.~12, p.~8, 02 2012.
+
+\bibitem{sorscher2023neural}
+B.~Sorscher, R.~Geirhos, S.~Shekhar, S.~Ganguli, and A.~S. Morcos, ``Beyond
+  neural scaling laws: beating power law scaling via data pruning,'' 2023.
+
+\bibitem{hoffmann2022training}
+J.~Hoffmann, S.~Borgeaud, A.~Mensch, E.~Buchatskaya, T.~Cai, E.~Rutherford,
+  D.~de~Las~Casas, L.~A. Hendricks, J.~Welbl, A.~Clark, T.~Hennigan, E.~Noland,
+  K.~Millican, G.~van~den Driessche, B.~Damoc, A.~Guy, S.~Osindero,
+  K.~Simonyan, E.~Elsen, J.~W. Rae, O.~Vinyals, and L.~Sifre, ``Training
+  compute-optimal large language models,'' 2022.
+
+\bibitem{alabdulmohsin2022revisiting}
+I.~Alabdulmohsin, B.~Neyshabur, and X.~Zhai, ``Revisiting neural scaling laws
+  in language and vision,'' 2022.
+
+\bibitem{hutter2021learning}
+M.~Hutter, ``Learning curve theory,'' 2021.
+
+\bibitem{rosenfeld2019constructive}
+J.~S. Rosenfeld, A.~Rosenfeld, Y.~Belinkov, and N.~Shavit, ``A constructive
+  prediction of the generalization error across scales,'' 2019.
+
+\bibitem{sun2017revisiting}
+C.~Sun, A.~Shrivastava, S.~Singh, and A.~Gupta, ``Revisiting unreasonable
+  effectiveness of data in deep learning era,'' 2017.
+
+\bibitem{Goodfellowetal2016}
+I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
+\newblock MIT Press, 2016.
+
+\bibitem{Bishop2006PatternRecog}
+C.~M. Bishop, {\em Pattern Recognition and Machine Learning (Information
+  Science and Statistics)}.
+\newblock Berlin, Heidelberg: Springer-Verlag, 2006.
+
+\bibitem{gomes_hal_spacefilling_mixtures}
+C.~Gomes, M.~Claeys-Bruno, and M.~Sergent, ``Space-filling designs for
+  mixtures,'' {\em {Chemometrics and Intelligent Laboratory Systems}},
+  vol.~174, pp.~111--127, Mar. 2018.
+
+\bibitem{fisher_1935}
+R.~Fisher, {\em {The design of experiments. 1935}}.
+\newblock Edinburgh: Oliver and Boyd, 1935.
+
+\bibitem{myers2009response}
+R.~Myers, D.~Montgomery, and C.~Anderson-Cook, {\em Response Surface
+  Methodology: Process and Product Optimization Using Designed Experiments}.
+\newblock Wiley Series in Probability and Statistics, Wiley, 2009.
+
+\bibitem{Goos_Jones_optDoE_2011}
+P.~Goos and B.~Jones, {\em Optimal Design of Experiments: A Case-Study
+  Approach}.
+\newblock 06 2011.
+
+\bibitem{Nist_2012_eng_stats}
+NIST/SEMATECH, {\em e-Handbook of Statistical Methods}.
+\newblock 2012.
+
+\bibitem{fedorov1972theory}
+V.~Fedorov, {\em Theory of Optimal Experiments}.
+\newblock Cellular Neurobiology, Academic Press, 1972.
+
+\bibitem{Cifar10}
+A.~Krizhevsky, V.~Nair, and G.~Hinton, ``Cifar-10 (canadian institute for
+  advanced research),''
+
+\bibitem{he2015resnet}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
+  recognition,'' 2015.
+
+\bibitem{pytorch}
+A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
+  Z.~Lin, N.~Gimelshein, L.~Antiga, A.~Desmaison, A.~K{\"{o}}pf, E.~Z. Yang,
+  Z.~DeVito, M.~Raison, A.~Tejani, S.~Chilamkurthy, B.~Steiner, L.~Fang,
+  J.~Bai, and S.~Chintala, ``Pytorch: An imperative style, high-performance
+  deep learning library,'' {\em CoRR}, vol.~abs/1912.01703, 2019.
+
+\end{thebibliography}
