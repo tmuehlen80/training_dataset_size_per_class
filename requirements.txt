@@ -7,3 +7,4 @@ scipy==1.8.0
 torch==1.12.1
 torchvision==0.13.1
 tqdm==4.62.3
+statsmodels==0.13.5

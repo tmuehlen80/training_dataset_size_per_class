@@ -37,6 +37,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     plt.ylim((0.05, 0.9))
     plt.axline((0, 0), slope=1, color="black", linestyle=(0, (5, 5)))
     plt.text(x=0.1, y=0.8, s=f"r-sq: {np.round(metrics.r2_score(results.accs, results[y_hat_name]), 3)}", bbox=props)
+    plt.legend(loc = 'lower right')
     if saving_plots:
         plt.savefig(f"paper/plots/{model_type}_{y_hat_name}.jpg")
     plt.show()
@@ -52,6 +53,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     plt.ylim((0.05, 0.9))
     plt.axline((0, 0), slope=1, color="black", linestyle=(0, (5, 5)))
     plt.text(x=0.1, y=0.8, s=f"r-sq: {np.round(metrics.r2_score(results_val.accs, results_val[y_hat_name]), 3)}", bbox=props)
+    plt.legend(loc = 'lower right')
     if saving_plots:
         plt.savefig(f"paper/plots/{model_type}_{y_hat_name}_val.jpg")
     plt.show()
@@ -61,6 +63,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     acc_pred = func(xdata_pred, *params)
     results_pred_orig["acc_pred"] = acc_pred
     sns.scatterplot(data = results_pred_orig, x = "total_training_size", y = "acc_pred", hue="epochs_trained")
+    plt.legend(loc = 'lower right')
     plt.show()
     display(results_pred_orig)
 
@@ -72,6 +75,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     sns.scatterplot(data = results_4500_orig, x="accs", y = y_hat_name, hue = "epochs_trained")
     plt.xlim((0.7, 0.9))
     plt.ylim((0.7, 0.9))
+    plt.legend(loc = 'lower right')
     if saving_plots:
         plt.savefig(f"paper/plots/{model_type}_{y_hat_name}_4500.jpg")
     plt.show()

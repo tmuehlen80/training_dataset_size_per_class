@@ -3,9 +3,6 @@ from sklearn import preprocessing
 from sklearn import metrics
 import numpy as np 
 
-def hello_world():
-    return "Hello World"
-
 # create function for preparing data:
 def prep_data_all_epochs(results: pd.DataFrame, 
               results_val:pd.DataFrame, 
@@ -85,8 +82,6 @@ def prep_data_all_epochs(results: pd.DataFrame,
         results_pred = results_pred.append(row, ignore_index=True)
 
     results_pred_orig = results_pred.copy()
-    results_pred
-
 
     ### normalize results for train:
     scaler = preprocessing.MinMaxScaler()
@@ -121,17 +116,21 @@ def prep_data_all_epochs(results: pd.DataFrame,
     results_4500.head(2)
 
     # prep data for using class counts:
-    xdata = np.transpose(results.to_numpy()[:, 2:-1])
+    #xdata = np.transpose(results.to_numpy()[:, 2:-1])
+    xdata = np.transpose(results.to_numpy()[:, 2:])
     y = results.to_numpy()[:, 0]
-    xdata_val = np.transpose(results_val.to_numpy()[:, 2:-1])
+    #xdata_val = np.transpose(results_val.to_numpy()[:, 2:-1])
+    xdata_val = np.transpose(results_val.to_numpy()[:, 2:])
     y_val = results_val.to_numpy()[:, 0]
     xdata.shape
-    xdata_pred = np.transpose(results_pred.to_numpy()[:, 1:-1])
+    #xdata_pred = np.transpose(results_pred.to_numpy()[:, 1:-1])
+    xdata_pred = np.transpose(results_pred.to_numpy()[:, 1:])
     xdata_pred.shape
 
     #display(results_4500.head(2))
     display(results_4500_orig.head())
-    xdata_4500 = np.transpose(results_4500.loc[:, classes + ["epochs_trained"] ].to_numpy())
+    #xdata_4500 = np.transpose(results_4500.loc[:, classes + ["epochs_trained"] ].to_numpy())
+    xdata_4500 = np.transpose(results_4500.loc[:, classes + ["epochs_trained", "total_training_size"] ].to_numpy())
     print(xdata_4500.shape)
     #xdata_4500
     results_4500.head(2)
@@ -158,8 +157,29 @@ def prep_data_all_epochs(results: pd.DataFrame,
     # data for last epoch, total_n only:
     xdata_last_epoch_total_n = np.transpose(results_last_epoch.to_numpy()[:, -1:])
     xdata_val_last_epoch_total_n = np.transpose(results_val_last_epoch.to_numpy()[:, -1:])
-    xdata_last_epoch_total_n.shape
 
-    return classes, xdata, y, xdata_val, y_val, xdata_pred, xdata_4500, y_4500, results, results_val, results_4500, results_pred, results_4500_orig, results_pred_orig, xdata_last_epoch, y_last_epoch, xdata_val_last_epoch, y_val_last_epoch, xdata_total_n_epoch, xdata_val_total_n_epoch
+    results = {"classes": classes, 
+               "xdata": xdata, 
+               "y": y, 
+               "xdata_val": xdata_val, 
+               "y_val": y_val, 
+               "xdata_pred": xdata_pred, 
+               "xdata_4500": xdata_4500, 
+               "y_4500": y_4500, 
+               "results": results, 
+               "results_val": results_val, 
+               "results_4500": results_4500, 
+               "results_pred": results_pred, 
+               "results_4500_orig": results_4500_orig, 
+               "results_pred_orig": results_pred_orig, 
+               "xdata_last_epoch": xdata_last_epoch, 
+               "y_last_epoch": y_last_epoch, 
+               "xdata_val_last_epoch": xdata_val_last_epoch, 
+               "y_val_last_epoch": y_val_last_epoch, 
+               "xdata_total_n_epoch": xdata_total_n_epoch, 
+               "xdata_val_total_n_epoch": xdata_val_total_n_epoch}
+    
+    
+    return results
 
 # next todo: write function for create last eoch only versions.
