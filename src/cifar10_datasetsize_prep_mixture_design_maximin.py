@@ -108,7 +108,6 @@ print(total_params)
 
 # do one full run on the complete dataset to see the optimal performance:
 check_epochs = np.arange(0, 200, 5)
-check_epochs = [1, 3]
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.1, momentum=0.9, weight_decay=1e-4)
@@ -362,7 +361,7 @@ for n_max in subset_sizes:
     for i, c in enumerate(classes):
         results[c] = subsets_collected[:, i]
     results["epochs_trained"] = epochs_trained
-    results.to_csv(f"Cifar10_acc_subsets_thomas_batch_size_512_mixture_design_maximin_subsetsize_{n_max}_20230811_tmp.csv", index=False)
+    results.to_csv(f"Cifar10_acc_subsets_thomas_batch_size_512_mixture_design_maximin_subsetsize_{n_max}_20230811.csv", index=False)
 
 
 
@@ -373,4 +372,4 @@ results["training_times"] = times
 for i, c in enumerate(classes):
     results[c] = subsets_collected[:, i]
 results["epochs_trained"] = epochs_trained
-results.to_csv("Cifar10_acc_subsets_thomas_batch_size_512_mixture_design_maximin_20230811_tmp.csv", index=False)
+results.to_csv("Cifar10_acc_subsets_thomas_batch_size_512_mixture_design_maximin_20230811.csv", index=False)
