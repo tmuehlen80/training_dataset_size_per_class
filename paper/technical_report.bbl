@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{hestness2017deep}
+J.~Hestness, S.~Narang, N.~Ardalani, G.~Diamos, H.~Jun, H.~Kianinejad, M.~M.~A.
+  Patwary, Y.~Yang, and Y.~Zhou, ``Deep learning scaling is predictable,
+  empirically,'' 2017.
+
 \bibitem{mahmood2022data}
 R.~Mahmood, J.~Lucas, D.~Acuna, D.~Li, J.~Philion, J.~M. Alvarez, Z.~Yu,
   S.~Fidler, and M.~T. Law, ``How much more data do i need? estimating
@@ -19,6 +24,10 @@ R.~Figueroa, Q.~Zeng-Treitler, S.~Kandula, and L.~Ngo, ``Predicting sample size
 B.~Sorscher, R.~Geirhos, S.~Shekhar, S.~Ganguli, and A.~S. Morcos, ``Beyond
   neural scaling laws: beating power law scaling via data pruning,'' 2023.
 
+\bibitem{sun2017revisiting}
+C.~Sun, A.~Shrivastava, S.~Singh, and A.~Gupta, ``Revisiting unreasonable
+  effectiveness of data in deep learning era,'' 2017.
+
 \bibitem{hoffmann2022training}
 J.~Hoffmann, S.~Borgeaud, A.~Mensch, E.~Buchatskaya, T.~Cai, E.~Rutherford,
   D.~de~Las~Casas, L.~A. Hendricks, J.~Welbl, A.~Clark, T.~Hennigan, E.~Noland,
@@ -36,10 +45,6 @@ M.~Hutter, ``Learning curve theory,'' 2021.
 \bibitem{rosenfeld2019constructive}
 J.~S. Rosenfeld, A.~Rosenfeld, Y.~Belinkov, and N.~Shavit, ``A constructive
   prediction of the generalization error across scales,'' 2019.
-
-\bibitem{sun2017revisiting}
-C.~Sun, A.~Shrivastava, S.~Singh, and A.~Gupta, ``Revisiting unreasonable
-  effectiveness of data in deep learning era,'' 2017.
 
 \bibitem{Goodfellowetal2016}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
