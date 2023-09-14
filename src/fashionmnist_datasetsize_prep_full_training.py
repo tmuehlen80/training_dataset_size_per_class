@@ -97,7 +97,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 print(model)
 
 
-num_epochs = 5
+num_epochs = 50
 count = 0
 # Lists for visualization of loss and accuracy 
 loss_list = []
@@ -109,6 +109,7 @@ predictions_list = []
 labels_list = []
 
 for epoch in range(num_epochs):
+    print(epoch)
     for images, labels in train_loader:
         # Transfering images and labels to GPU if available
         images, labels = images.to(device), labels.to(device)
@@ -133,7 +134,7 @@ for epoch in range(num_epochs):
     
     # Testing the model
     
-        if not (count % 50):   
+        if not (count % 15):   
             total = 0
             correct = 0
         
@@ -175,12 +176,12 @@ with torch.no_grad():
         outputs = model(test)
         predicted = torch.max(outputs, 1)[1]
         c = (predicted == labels).squeeze()
-        
         for i in range(100):
             label = labels[i]
             class_correct[label] += c[i].item()
             total_correct[label] += 1
-        
+
+
 for i in range(10):
     print("Accuracy of {}: {:.2f}%".format(output_label(i), class_correct[i] * 100 / total_correct[i]))
 
