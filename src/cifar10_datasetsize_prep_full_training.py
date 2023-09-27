@@ -92,12 +92,13 @@ print("doing full training.")
 # Resnet18 seems to fullfill this.
 
 # do one full run on the complete dataset to see the optimal performance:
-check_epochs = np.arange(0, 200, 5)
+check_epochs = np.arange(0, 201, 5)
+#check_epochs = np.arange(0, 6, 2)
 
 criterion = nn.CrossEntropyLoss()
 
 
-n_repeat = 10
+n_repeat = 2
 accs = []
 epochs_trained = []
 train_losses = []
@@ -108,6 +109,7 @@ start = time()
 for iteration in range(n_repeat):
     print(f'Iteration: {iteration}')
     net = models.resnet18() 
+    net.fc = nn.Linear(net.fc.in_features, 10)
     _ = net.to(device)
     optimizer = optim.SGD(net.parameters(), lr=0.1, momentum=0.9, weight_decay=1e-4)
     lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[100, 150])
@@ -115,6 +117,7 @@ for iteration in range(n_repeat):
    # print(total_params)
     for epoch in range(max(check_epochs) + 1):  # loop over the dataset multiple times
         running_loss = 0.0
+        _ = net.train()
         #for i, data in enumerate(trainloader, 0):
         for i, data in enumerate(trainloader, 0):
             # get the inputs; data is a list of [inputs, labels]
@@ -134,6 +137,7 @@ for iteration in range(n_repeat):
         #if i % 100 == 99:    # print every 2000 mini-batches
         results = pd.DataFrame()
         if epoch in check_epochs:
+            _ = net.eval()
             # calculate test acc:
             correct = 0
             total = 0
@@ -157,13 +161,14 @@ for iteration in range(n_repeat):
             train_losses.append(running_loss)
             val_losses.append(running_val_loss)
 
-results["itterations"] =  itterations
+
+results["itterations"] = itterations
 results["accs"] =  accs
 results["epoch"] = epochs_trained
 results["train_loss"] = train_losses
 results["val_loss"] = val_losses
 print("writting results to file.")
-results.to_csv(f"Cifar10_acc_full_train_20_iterations_20230714.csv", index=False)
+results.to_csv(f"Cifar10_acc_full_train_resnet_fc_reset_to_outputsize_20_iterations_20230921.csv", index=False)
 end = time()
 print(end - start)
 

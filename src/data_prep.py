@@ -21,6 +21,7 @@ def prep_data_all_epochs(results: pd.DataFrame,
     classes = results.columns.tolist()[2:12]
     print(classes)
     results["total_training_size"] = results[classes].sum(axis=1)
+    results_orig = results.copy()
     results_val["total_training_size"] = results_val[classes].sum(axis=1)
     results.head(4)
     results_4500["total_training_size"] = results_4500[classes].sum(axis=1)
@@ -94,6 +95,7 @@ def prep_data_all_epochs(results: pd.DataFrame,
     # using the same scaler for val:
     results_scaled_val = pd.DataFrame(scaler.transform(results_val.iloc[:, 1:]))
     results_scaled_val.columns = results_val.iloc[:, 1:].columns
+    results_val_orig = results_val.copy()
     results_val = pd.concat([results_val["accs"], results_scaled_val], axis=1)
     results_val.head(2)
 
@@ -167,7 +169,9 @@ def prep_data_all_epochs(results: pd.DataFrame,
                "xdata_4500": xdata_4500, 
                "y_4500": y_4500, 
                "results": results, 
+               "results_orig": results_orig,
                "results_val": results_val, 
+               "results_val_orig": results_val_orig, 
                "results_4500": results_4500, 
                "results_pred": results_pred, 
                "results_4500_orig": results_4500_orig, 
