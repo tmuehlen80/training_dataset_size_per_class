@@ -93,7 +93,7 @@ print("doing full training.")
 # Resnet18 seems to fullfill this.
 
 #net = models.mobilenet_v3_small() # best
-net = models.resnet18() 
+#net = models.resnet18() 
 #net = models.resnet18(pretrained=True) 
 #net = models.resnet34() 
 #net = models.resnet34(pretrained=True) 
@@ -101,62 +101,13 @@ net = models.resnet18()
 #net = models.resnext50_32x4d(pretrained=True)
 #net = models.vgg16() 
 
-_ = net.to(device)
+#_ = net.to(device)
 
-total_params = sum(	param.numel() for param in net.parameters())
-print(total_params)
+#total_params = sum(	param.numel() for param in net.parameters())
+#print(total_params)
 
 # do one full run on the complete dataset to see the optimal performance:
 check_epochs = np.arange(0, 200, 5)
-
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(net.parameters(), lr=0.1, momentum=0.9, weight_decay=1e-4)
-#optimizer = optim.Adam(net.parameters(), lr=0.1, weight_decay=1e-4)
-
-lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[100, 150])
-
-start = time()
-for epoch in range(max(check_epochs) + 1):  # loop over the dataset multiple times
-    running_loss = 0.0
-    #for i, data in enumerate(trainloader, 0):
-    for i, data in enumerate(trainloader, 0):
-        # get the inputs; data is a list of [inputs, labels]
-        #inputs, labels = data
-        # in case of using a GPU:
-        inputs, labels = data[0].to(device), data[1].to(device)
-        # zero the parameter gradients
-        optimizer.zero_grad()
-        # forward + backward + optimize
-        outputs = net(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        # print statistics
-        running_loss += loss.item()
-    lr_scheduler.step()
-    #if i % 100 == 99:    # print every 2000 mini-batches
-    if epoch in check_epochs:
-        # calculate test acc:
-        correct = 0
-        total = 0
-        running_val_loss = 0
-        # since we're not training, we don't need to calculate the gradients for our outputs
-        with torch.no_grad():
-            for data in testloader:
-                images, labels = data[0].to(device), data[1].to(device)
-                # calculate outputs by running images through the network
-                outputs = net(images)
-                val_loss = criterion(outputs, labels)
-                running_val_loss += val_loss.item()
-                # the class with the highest energy is what we choose as prediction
-                _, predicted = torch.max(outputs.data, 1)
-                total += labels.size(0)
-                correct += (predicted == labels).sum().item()
-        print(f' epoch: {epoch}, train_loss: {running_loss:.3f}, val_loss: {running_val_loss}, Accuracy: {100 * correct // total} %, current lr: {optimizer.param_groups[0]["lr"]}')
-
-end = time()
-print(end - start)
-
 
 ### set hyper parameters for data generating algo:
 
@@ -310,6 +261,7 @@ for n_max in subset_sizes:
             trainloader_subset = torch.utils.data.DataLoader(trainset_subset, batch_size=batch_size, shuffle=True, num_workers=2)
             # now do the actual training:
             net = models.resnet18() 
+            net.fc = nn.Linear(net.fc.in_features, 10)
             _ = net.to(device)
             criterion = nn.CrossEntropyLoss()
             optimizer = optim.SGD(net.parameters(), lr=0.1, momentum=0.9, weight_decay=1e-4)
@@ -318,6 +270,7 @@ for n_max in subset_sizes:
             start = time()
             for epoch in range(max(check_epochs) + 1):  # loop over the dataset multiple times
                 running_loss = 0.0
+                _ = net.train()
                 #for i, data in enumerate(trainloader, 0):
                 for i, data in enumerate(trainloader_subset, 0):
                     # get the inputs; data is a list of [inputs, labels]
@@ -333,6 +286,7 @@ for n_max in subset_sizes:
                     running_loss += loss.item()
                 lr_scheduler.step()
                 if epoch in check_epochs:
+                    _ = net.eval()                    
                     end = time()
                     subsets_collected = np.append(subsets_collected, subsets.reshape(1, -1), axis=0)
                     epochs_trained.append(epoch)
@@ -361,7 +315,7 @@ for n_max in subset_sizes:
     for i, c in enumerate(classes):
         results[c] = subsets_collected[:, i]
     results["epochs_trained"] = epochs_trained
-    results.to_csv(f"Cifar10_acc_subsets_thomas_batch_size_512_mixture_design_maximin_subsetsize_{n_max}_20230811.csv", index=False)
+    results.to_csv(f"Cifar10_acc_subsets_thomas_batch_size_512_reset_fc_output_size_mixture_design_maximin_subsetsize_{n_max}_20230921.csv", index=False)
 
 
 
@@ -372,4 +326,4 @@ results["training_times"] = times
 for i, c in enumerate(classes):
     results[c] = subsets_collected[:, i]
 results["epochs_trained"] = epochs_trained
-results.to_csv("Cifar10_acc_subsets_thomas_batch_size_512_mixture_design_maximin_20230811.csv", index=False)
+results.to_csv("Cifar10_acc_subsets_thomas_batch_size_512_reset_fc_output_size_mixture_design_maximin_20230921.csv", index=False)
