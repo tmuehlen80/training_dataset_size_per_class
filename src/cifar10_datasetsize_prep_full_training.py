@@ -38,26 +38,16 @@ print("prepare datasets")
 transform = transforms.Compose(
     [transforms.RandomHorizontalFlip(),
      transforms.RandomCrop(32, 4),   
-     #transforms.ColorJitter(),
-     #transforms.RandomPerspective(),  
-     #transforms.Resize(size=(224, 224)), # necessary only for VGG16
      transforms.ToTensor(),
-     #transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
-     transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])]     
+     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]     
      )
 
 transform_test = transforms.Compose(
-    [#transforms.Resize(size=(224, 224)), # necessary only for VGG16
-     transforms.ToTensor(),
-     #transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
-     transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])]     
+    [transforms.ToTensor(),
+     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]     
      )
 
 
-
-#batch_size = 256
 batch_size = 512
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print(device)
@@ -74,6 +64,7 @@ n_total = trainset_subset.data.shape[0]
 n_classes = pd.Series(trainset_subset.targets).nunique()
 
 # Build a dict for each class:
+# needed here?
 data_dict = {}
 masks = {}
 label_dict = {}
@@ -93,12 +84,11 @@ print("doing full training.")
 
 # do one full run on the complete dataset to see the optimal performance:
 check_epochs = np.arange(0, 201, 5)
-#check_epochs = np.arange(0, 6, 2)
 
 criterion = nn.CrossEntropyLoss()
-
-
-n_repeat = 2
+# number of times the full training should be repeated.
+n_repeat = 10
+# create lists for storing different kinds of results
 accs = []
 epochs_trained = []
 train_losses = []
@@ -114,43 +104,33 @@ for iteration in range(n_repeat):
     optimizer = optim.SGD(net.parameters(), lr=0.1, momentum=0.9, weight_decay=1e-4)
     lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[100, 150])
     total_params = sum(	param.numel() for param in net.parameters())
-   # print(total_params)
+    # doing a standard pytorch training approach:
     for epoch in range(max(check_epochs) + 1):  # loop over the dataset multiple times
         running_loss = 0.0
         _ = net.train()
-        #for i, data in enumerate(trainloader, 0):
         for i, data in enumerate(trainloader, 0):
-            # get the inputs; data is a list of [inputs, labels]
-            #inputs, labels = data
-            # in case of using a GPU:
             inputs, labels = data[0].to(device), data[1].to(device)
-            # zero the parameter gradients
             optimizer.zero_grad()
-            # forward + backward + optimize
             outputs = net(inputs)
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
-            # print statistics
             running_loss += loss.item()
         lr_scheduler.step()
-        #if i % 100 == 99:    # print every 2000 mini-batches
         results = pd.DataFrame()
+        # calculating performance on test dataset:
         if epoch in check_epochs:
             _ = net.eval()
             # calculate test acc:
             correct = 0
             total = 0
             running_val_loss = 0
-            # since we're not training, we don't need to calculate the gradients for our outputs
             with torch.no_grad():
                 for data in testloader:
                     images, labels = data[0].to(device), data[1].to(device)
-                    # calculate outputs by running images through the network
                     outputs = net(images)
                     val_loss = criterion(outputs, labels)
                     running_val_loss += val_loss.item()
-                    # the class with the highest energy is what we choose as prediction
                     _, predicted = torch.max(outputs.data, 1)
                     total += labels.size(0)
                     correct += (predicted == labels).sum().item()
@@ -160,7 +140,6 @@ for iteration in range(n_repeat):
             accs.append(100 * correct / total)
             train_losses.append(running_loss)
             val_losses.append(running_val_loss)
-
 
 results["itterations"] = itterations
 results["accs"] =  accs
