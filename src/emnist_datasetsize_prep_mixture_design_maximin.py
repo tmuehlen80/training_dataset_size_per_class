@@ -36,7 +36,6 @@ test_dataset = datasets.EMNIST(root='./data', split='balanced', train=False, dow
 
 batch_size = 512
 check_epochs = np.arange(0, 91, 2)
-#check_epochs = np.arange(0, 27, 2)
 
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=batch_size)
@@ -45,14 +44,11 @@ test_loader = DataLoader(test_dataset, batch_size=batch_size)
 n_total = train_dataset.__len__()
 n_classes = len(train_dataset.classes)
 
-#dir(train_dataset)
-#train_dataset._labels
-
-dir(train_dataset)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 # Build a dict for each class:
+# this is needed later for randomly sampling from each class.
 data_dict = {}
 masks = {}
 label_dict = {}
@@ -65,12 +61,9 @@ for i in range(n_classes):
 
 n_repeat_outer = 140
 subset_sizes = np.arange(10000, 100000 + 1, 10000).tolist()
-#subset_sizes = np.arange(1000, 200 + 1, 1000).tolist()
+# if desired, for each row of the doe created, the training can be repeated:
 n_repeat_inner = 1
 
-
-
-###############
 
 subsets_collected = np.empty((0, n_classes))
 accs = []
