@@ -19,6 +19,7 @@ import torch.optim as optim
 
 from torchvision import models
 
+
 #import pyDOE
 
 #from dexpy.samplers import uniform_simplex_sample
@@ -238,7 +239,7 @@ def create_constrained_mixture_design(d, n, n_sum, c_max, n_optim, n_batch_size)
 
 for n_max in subset_sizes:
     print("optimizing doe:")
-    doe = create_constrained_mixture_design(n_classes, n_repeat_outer, n_max, 5000, n_optim=500000, n_batch_size=1000)
+    doe = create_constrained_mixture_design(n_classes, n_repeat_outer, n_max, 5000, n_optim=5000, n_batch_size=1000)
     for k_outer in range(n_repeat_outer):
         subsets = doe[k_outer,:]
         for k_inner in range(n_repeat_inner):
@@ -318,6 +319,7 @@ for n_max in subset_sizes:
     results.to_csv(f"Cifar10_val_acc_subsets_thomas_batch_size_512_reset_fc_output_size_mixture_design_maximin_subsetsize_{n_max}_20231103.csv", index=False)
 
 
+
 print("writting results to file.")
 results = pd.DataFrame()
 results["accs"] = accs
@@ -325,4 +327,4 @@ results["training_times"] = times
 for i, c in enumerate(classes):
     results[c] = subsets_collected[:, i]
 results["epochs_trained"] = epochs_trained
-results.to_csv("Cifar10_val_acc_subsets_thomas_batch_size_512_reset_fc_output_size_mixture_design_maximin_20231103.csv", index=False)
+results.to_csv("_Cifar10_acc_subsets_thomas_batch_size_512_reset_fc_output_size_mixture_design_maximin_20230921.csv", index=False)

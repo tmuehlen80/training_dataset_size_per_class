@@ -15,7 +15,7 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 import importlib.util
 
-spec_data_generation = importlib.util.spec_from_file_location("data_generation", "src/data_generation.py")
+spec_data_generation = importlib.util.spec_from_file_location("data_generation", "data_generation.py")
 data_generation = importlib.util.module_from_spec(spec_data_generation)
 spec_data_generation.loader.exec_module(data_generation)
 
@@ -34,7 +34,7 @@ train_dataset_subset = datasets.EMNIST(root='./data', split='balanced', train=Tr
 test_dataset = datasets.EMNIST(root='./data', split='balanced', train=False, download=True, transform=transform)
 
 
-batch_size = 512
+batch_size = 2048
 check_epochs = np.arange(0, 91, 2)
 
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -45,7 +45,7 @@ n_total = train_dataset.__len__()
 n_classes = len(train_dataset.classes)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+print(device)
 
 # Build a dict for each class:
 # this is needed later for randomly sampling from each class.
@@ -136,7 +136,7 @@ for n_max in subset_sizes:
                     # calculate test acc:
                     correct = 0
                     total = 0
-                    running_val_loss = 0
+                    running_val_loss = 0.0
                     # since we'rnot training, we don't need to calculate the gradients for our outputs
                     with torch.no_grad():
                         for inputs, labels in test_loader:
@@ -151,10 +151,18 @@ for n_max in subset_sizes:
                             running_val_loss += val_loss.item()
                             total += labels.size(0)
                             correct += (predicted == labels).sum().item()
-                    print(f'n_max: {n_max}, repeat_outer {k_outer}, repeat_inner {k_inner}, epoch: {epoch}, train_loss: {running_loss:.3f}, val_loss: {running_val_loss}, Accuracy: {100 * correct // total} %, current lr: {optimizer.param_groups[0]["lr"]}')
+                    print(f'n_max: {n_max}, repeat_outer {k_outer}, repeat_inner {k_inner}, epoch: {epoch}, train_loss: {running_loss:.3f}, val_loss: {running_val_loss}, Accuracy: {100 * correct / total} %, current lr: {optimizer.param_groups[0]["lr"]}')
                     times.append(end-start)
                     start = time()
                     accs.append(correct / total)
+                    print("writting results to file.")
+                    results = pd.DataFrame()
+                    results["accs"] = accs
+                    results["training_times"] = times
+                    for i, c in enumerate(train_dataset.classes):
+                        results[c] = subsets_collected[:, i]
+                    results["epochs_trained"] = epochs_trained
+                    results.to_csv(f"emnist_train_acc_subsets_thomas_batch_size_512_mobilenet_mixture_design_maximin_subsetsize_{n_max}_20231103.csv", index=False)
 
 
 # end loop
@@ -166,7 +174,7 @@ for i, c in enumerate(train_dataset.classes):
     results[c] = subsets_collected[:, i]
 
 results["epochs_trained"] = epochs_trained
-results.to_csv(f"emnist_acc_subsets_thomas_batch_size_512_mobilenet_mixture_design_maximin_subsetsize_{n_max}_20230922_.csv", index=False)
+results.to_csv(f"emnist_train_acc_subsets_thomas_batch_size_512_mobilenet_mixture_design_maximin_subsetsize_20231103.csv", index=False)
 
 
 

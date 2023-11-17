@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 import pandas as pd
 import numpy as np
 from time import time
-from timm import create_model
+#from timm import create_model
 
 # Define data transformations and load the Food101 dataset
 transform = transforms.Compose([
@@ -20,7 +20,7 @@ transform = transforms.Compose([
 train_dataset = datasets.EMNIST(root='./data', split='balanced', train=True, download=True, transform=transform)
 test_dataset = datasets.EMNIST(root='./data', split='balanced', train=False, download=True, transform=transform)
 
-batch_size = 512
+batch_size = 2048
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=batch_size)
 
@@ -73,6 +73,7 @@ itterations = []
 #     param.requires_grad = False
 
 #n_free_param = 0
+
 #for param in model.parameters():
 #    if param.requires_grad:
 #        n_free_param = n_free_param + param.numel()
@@ -122,7 +123,9 @@ for iteration in range(n_repeat):
     optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9, weight_decay=1e-4)
     #lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[45])
     # Train the model
+    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(device)
     _ = model.to(device)
     for epoch in range(max(check_epochs) + 1):
         start = time()
@@ -130,9 +133,9 @@ for iteration in range(n_repeat):
         running_loss = 0.0
         i = 0
         for inputs, labels in train_loader:
-            #if i %100 == 0:
-            #    print(i)
-            #i = i + 1
+            if i %10 == 0:
+                print(i)
+            i = i + 1
             inputs, labels = inputs.to(device), labels.to(device)
             optimizer.zero_grad()
             outputs = model(inputs)
@@ -175,7 +178,7 @@ results["epoch"] = epochs_trained
 results["train_loss"] = train_losses
 results["val_loss"] = val_losses
 #print("writting results to file.")
-results.to_csv(f"emnistbalanced_full_dataset_trainings_mobilenet_20230921.csv", index=False)
+results.to_csv(f"emnistbalanced_full_dataset_trainings_mobilenet_20231101.csv", index=False)
 
 
 
