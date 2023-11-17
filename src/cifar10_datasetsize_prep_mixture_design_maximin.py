@@ -113,10 +113,10 @@ check_epochs = np.arange(0, 200, 5)
 ### set hyper parameters for data generating algo:
 
 #n_repeat = 15
-n_repeat_outer = 40
+n_repeat_outer = 20
 subset_sizes = np.arange(5000, 45000 + 1, 5000).tolist()
 #subset_sizes = np.arange(1000, 200 + 1, 1000).tolist()
-n_repeat_inner = 3
+n_repeat_inner = 2
 # the actual big loop:
 print("starting training loop for subsets:")
 print(f"check epochs: {check_epochs}")
@@ -316,7 +316,7 @@ for n_max in subset_sizes:
     for i, c in enumerate(classes):
         results[c] = subsets_collected[:, i]
     results["epochs_trained"] = epochs_trained
-    results.to_csv(f"_Cifar10_acc_subsets_thomas_batch_size_512_reset_fc_output_size_mixture_design_maximin_subsetsize_{n_max}_20230921.csv", index=False)
+    results.to_csv(f"Cifar10_val_acc_subsets_thomas_batch_size_512_reset_fc_output_size_mixture_design_maximin_subsetsize_{n_max}_20231103.csv", index=False)
 
 
 
