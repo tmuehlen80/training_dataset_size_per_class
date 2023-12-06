@@ -186,4 +186,3 @@ def prep_data_all_epochs(results: pd.DataFrame,
     
     return results
 
-# next todo: write function for create last eoch only versions.
