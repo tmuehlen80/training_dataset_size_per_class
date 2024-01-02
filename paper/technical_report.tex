@@ -10,7 +10,7 @@
 \usepackage{graphicx}
 \usepackage{makecell}
 \usepackage{verbatim}
-%\usepackage{mathtools}
+\usepackage{mathtools}
 %\usepackage{mathabx} 
 %\usepackage{float}
 \usepackage{subcaption}
@@ -21,7 +21,7 @@
 % youtube video on compiling latex in vscode
 % https://www.youtube.com/watch?v=QK_yc9qSa2w
 \title{Training dataset size prediction when adopting image counts individually per class.}
-\author{Thomas Mühlenstädt, Jelena Frtunikj}
+\author{Thomas Mühlenstädt}
 
 \graphicspath{ {./plots/} }
 \RestyleAlgo{ruled}
@@ -454,6 +454,79 @@ Overall, the descriptive analysis did not yield any concerns in terms of outlier
     \item Also, for this model, the prediction plots look most reasonable, scattering rather randomly around the diagonal.
 \end{itemize}
 
+
+\section{emnist}
+
+\begin{figure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{cifar10/accuracy_distribution.jpg}
+        \label{fig:accuracy_distribution_cifar10}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{emnist/accuracy_distribution.jpg}
+        \label{fig:accuracy_distribution_emnist}
+    \end{subfigure}
+    \caption{Accuracy distributions for models fitted to cifar10 and emnist dataset.}
+    \label{fig:acc_distributions}
+\end{figure}
+
+\begin{itemize}
+    \item The emnist dataset is an extension of the famous mnist dataset, which has more classes. The version used here is the balanced emnist dataset, consisting of 47 different characters, each class having 2400 images in the train dataset and 400 images in a validation dataset \cite{cohen2017emnist}.  
+    \item The model architeture used here for the image classification is the \verb|mobilenet_v3_large| model from the pytorch model zoo \cite{howard2019mobilenetv3}.
+    \item As for the cifar dataset, the suggested algorithm has been applied with the following details:
+    \item subset sizes $[10000, 20000, \dots, 100000]$, per subset size 140 different settings for the train dataset and 70 different settings for the validation dataset.
+    \item For each setting, the \verb|mobilenet_v3_large| model has been fitted, using the SGD optimizer (with learning rate $=0.1$, momentum $=0.9$, weight decay $=1e-4$ and a cross entropy loss function), a batch size of 2048 for 90 epochs. 
+    \item Here, a slightly different modeling approach compared to the cifar10 dataset is chosen. 
+    \item First, the resulting accuracies are differently distributed (please see figure xxx), which motivates to not use a powerlaw, but an arctan model as this allows better for modelling a bimodal dataset.
+    \item Also, directly using all classes as features for the model is possible but not necessarily recommendable due to the high number of classes.
+    \item Hence, an interative modeling approach has been chosen here, specifically a forward selection appoach using a residual sum of squares as selection criterion. 
+    \item $$y = a + c* \arctan{\left(\sum_{j = 1}^{J}{\theta_j x_j} + b \right)}$$
+    \item The selection of which
+\end{itemize}
+
+
+\begin{table}[h!]
+    \centering
+\begin{tabular}{lrl}
+    param\_name &  param\_value &    rss \\
+    a                                  &         0.39 &    -    \\
+    b                                  &        18.25 &    -    \\
+    c                                  &         0.27 &    -    \\
+    total\_training\_size                &        16.29 & 943.86 \\
+    epochs\_trained                     &        15.29 & 517.94 \\
+    epochs\_trained:total\_training\_size &         9.06 &  23.40 \\
+    Y:total\_training\_size              &         0.17 &  23.00 \\
+    W:total\_training\_size              &         0.15 &  22.74 \\
+    q                                  &         0.09 &  22.57 \\
+    B:h                                &         0.08 &  22.43 \\
+    seven:J                            &         0.08 &  22.31 \\
+    four:total\_training\_size           &         0.11 &  22.19 \\
+    six:O                              &        -0.06 &  22.11 \\
+    \end{tabular}
+\caption{Estimated parameters for forward selected model for the emnist dataset.}
+\label{table:param_values_emnist}
+\end{table}
+
+
+
+\begin{figure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{emnist/arctan_all_epochs_forward_selection.jpg}
+        \caption{xxx}
+        \label{fig:emnist_prediction_plot_train}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{emnist/arctan_all_epochs_forward_selection_val.jpg}
+        \caption{xxx}
+        \label{fig:emnist_prediction_plot_val}
+    \end{subfigure}
+    \caption{Prediction plots for arctan forward selection model for emnist dataset}
+    \label{fig:emnist_prediction_plot}
+\end{figure}
 \section{Discussion summary}
 
 \pagebreak

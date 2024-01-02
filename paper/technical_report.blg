@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: technical_report.aux
 The style file: ieeetr.bst
@@ -7,36 +7,36 @@ Warning--empty publisher in Goos_Jones_optDoE_2011
 Warning--empty publisher in Nist_2012_eng_stats
 Warning--empty journal in Cifar10
 Warning--empty year in Cifar10
-You've used 21 entries,
+You've used 23 entries,
             1876 wiz_defined-function locations,
-            582 strings with 7471 characters,
-and the built_in function-call counts, 4215 in all, are:
-= -- 283
-> -- 364
+            588 strings with 7838 characters,
+and the built_in function-call counts, 4623 in all, are:
+= -- 305
+> -- 410
 < -- 0
-+ -- 130
-- -- 109
-* -- 327
-:= -- 701
-add.period$ -- 27
-call.type$ -- 21
-change.case$ -- 14
++ -- 146
+- -- 123
+* -- 361
+:= -- 771
+add.period$ -- 29
+call.type$ -- 23
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 147
-empty$ -- 398
-format.name$ -- 109
-if$ -- 960
+cite$ -- 27
+duplicate$ -- 155
+empty$ -- 434
+format.name$ -- 123
+if$ -- 1050
 int.to.chr$ -- 0
-int.to.str$ -- 21
+int.to.str$ -- 23
 missing$ -- 18
-newline$ -- 73
-num.names$ -- 21
-pop$ -- 123
+newline$ -- 79
+num.names$ -- 23
+pop$ -- 137
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 72
+skip$ -- 80
 stack$ -- 0
 substring$ -- 30
 swap$ -- 20
@@ -45,7 +45,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 24
-width$ -- 23
-write$ -- 170
+while$ -- 26
+width$ -- 25
+write$ -- 184
 (There were 4 warnings)

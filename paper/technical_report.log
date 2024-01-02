@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.1)  1 JAN 2024 23:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.2)  2 JAN 2024 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report
+**/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex
 (/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -120,28 +120,388 @@ Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip52
+ (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count275
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip53
+\skiplinenumber=\skip54
+\skiprule=\skip55
+\skiphlne=\skip56
+\skiptext=\skip57
+\skiplength=\skip58
+\algomargin=\skip59
+\skipalgocfslide=\skip60
+\algowidth=\dimen158
+\inoutsize=\dimen159
+\inoutindent=\dimen160
+\interspacetitleruled=\dimen161
+\interspacealgoruled=\dimen162
+\interspacetitleboxruled=\dimen163
+\algocf@ruledwidth=\skip61
+\algocf@inoutbox=\box52
+\algocf@inputbox=\box53
+\AlCapSkip=\skip62
+\AlCapHSkip=\skip63
+\algoskipindent=\skip64
+\algocf@nlbox=\box54
+\algocf@hangingbox=\box55
+\algocf@untilbox=\box56
+\algocf@skipuntil=\skip65
+\algocf@capbox=\box57
+\algocf@lcaptionbox=\skip66
+\algoheightruledefault=\skip67
+\algoheightrule=\skip68
+\algotitleheightruledefault=\skip69
+\algotitleheightrule=\skip70
+\c@algocfline=\count276
+\c@algocfproc=\count277
+\c@algocf=\count278
+\algocf@algoframe=\box58
+\algocf@algobox=\box59
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen164
+\ar@mcellbox=\box60
+\extrarowheight=\dimen165
+\NC@list=\toks23
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box61
+)
+\rotheadsize=\dimen166
+\c@nlinenum=\count279
+\TeXr@lab=\toks24
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks25
+\verbatim@line=\toks26
+\verbatim@in@stream=\read2
+) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2021/02/02 v1.28 mathematical typesetting tools
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count280
+\calc@Bcount=\count281
+\calc@Adimen=\dimen167
+\calc@Bdimen=\dimen168
+\calc@Askip=\skip73
+\calc@Bskip=\skip74
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count282
+\calc@Cskip=\skip75
+) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count283
+\l_MT_multwidth_dim=\dimen169
+\origjot=\skip76
+\l_MT_shortvdotswithinadjustabove_dim=\dimen170
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen171
+\l_MT_above_intertext_sep=\dimen172
+\l_MT_below_intertext_sep=\dimen173
+\l_MT_above_shortintertext_sep=\dimen174
+\l_MT_below_shortintertext_sep=\dimen175
+\xmathstrut@box=\box62
+\xmathstrut@dim=\dimen176
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen177
+\captionmargin@=\dimen178
+\captionwidth=\dimen179
+\caption@tempdima=\dimen180
+\caption@indent=\dimen181
+\caption@parindent=\dimen182
+\caption@hangindent=\dimen183
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count284
+\c@continuedfloat=\count285
+)
+\c@subfigure=\count286
+\c@subtable=\count287
+) (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
 
 
-! LaTeX Error: File `ifoddpage.sty' not found.
+Package tocbibind Note: Using section or other style headings.
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count288
+\l__pdf_internal_box=\box63
+) (./technical_report.aux)
+\openout1 = `technical_report.aux'.
 
-Enter file name: 
-/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty:1495: Emergency stop.
-<read *> 
-         
-l.1495 \RequirePackage
-                      {xspace}%^^M
-*** (cannot \read from terminal in nonstop modes)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
- 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count289
+\scratchdimen=\dimen184
+\scratchbox=\box64
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen185
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks28
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7]
+<./plots//Cifar10_full_dataset_acc_vs_epoch.jpg, id=40, 433.62pt x 289.08pt>
+File: ./plots//Cifar10_full_dataset_acc_vs_epoch.jpg Graphic file (type jpg)
+<use ./plots//Cifar10_full_dataset_acc_vs_epoch.jpg>
+Package pdftex.def Info: ./plots//Cifar10_full_dataset_acc_vs_epoch.jpg  used on input line 251.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//Cifar10_training_datasetsize_vs_test_acc.jpg, id=41, 433.62pt x 289.08pt>
+File: ./plots//Cifar10_training_datasetsize_vs_test_acc.jpg Graphic file (type jpg)
+<use ./plots//Cifar10_training_datasetsize_vs_test_acc.jpg>
+Package pdftex.def Info: ./plots//Cifar10_training_datasetsize_vs_test_acc.jpg  used on input line 257.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//test_acc_vs_epoch_subset_size_5000.jpg, id=42, 433.62pt x 289.08pt>
+File: ./plots//test_acc_vs_epoch_subset_size_5000.jpg Graphic file (type jpg)
+<use ./plots//test_acc_vs_epoch_subset_size_5000.jpg>
+Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_5000.jpg  used on input line 271.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//test_acc_vs_epoch_subset_size_20000.jpg, id=43, 433.62pt x 289.08pt>
+File: ./plots//test_acc_vs_epoch_subset_size_20000.jpg Graphic file (type jpg)
+<use ./plots//test_acc_vs_epoch_subset_size_20000.jpg>
+Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_20000.jpg  used on input line 277.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//test_acc_vs_epoch_subset_size_30000.jpg, id=44, 433.62pt x 289.08pt>
+File: ./plots//test_acc_vs_epoch_subset_size_30000.jpg Graphic file (type jpg)
+<use ./plots//test_acc_vs_epoch_subset_size_30000.jpg>
+Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_30000.jpg  used on input line 283.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//test_acc_vs_epoch_subset_size_45000.jpg, id=45, 433.62pt x 289.08pt>
+File: ./plots//test_acc_vs_epoch_subset_size_45000.jpg Graphic file (type jpg)
+<use ./plots//test_acc_vs_epoch_subset_size_45000.jpg>
+Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_45000.jpg  used on input line 289.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--293
+[]$[]$$[]$
+ []
+
+
+Overfull \hbox (60.2619pt too wide) in paragraph at lines 300--313
+ [][] 
+ []
+
+
+Overfull \hbox (72.72961pt too wide) in paragraph at lines 319--326
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (20.05173pt too wide) in paragraph at lines 332--339
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./plots//powerlaw_train_accs_hat_epoch.jpg, id=46, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_train_accs_hat_epoch.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_train_accs_hat_epoch.jpg>
+Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_epoch.jpg  used on input line 372.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//powerlaw_val_accs_hat_epoch.jpg, id=47, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_val_accs_hat_epoch.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_val_accs_hat_epoch.jpg>
+Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_epoch.jpg  used on input line 378.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//powerlaw_train_accs_hat_epoch_sq.jpg, id=48, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_train_accs_hat_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_train_accs_hat_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_epoch_sq.jpg  used on input line 390.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//powerlaw_val_accs_hat_epoch_sq.jpg, id=49, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_val_accs_hat_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_val_accs_hat_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_epoch_sq.jpg  used on input line 396.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//powerlaw_train_accs_hat_total_n_epoch.jpg, id=50, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_train_accs_hat_total_n_epoch.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_train_accs_hat_total_n_epoch.jpg>
+Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_total_n_epoch.jpg  used on input line 408.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//powerlaw_val_accs_hat_total_n_epoch.jpg, id=51, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_val_accs_hat_total_n_epoch.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_val_accs_hat_total_n_epoch.jpg>
+Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_total_n_epoch.jpg  used on input line 414.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg, id=52, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg  used on input line 425.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg, id=53, 433.62pt x 289.08pt>
+File: ./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg  used on input line 431.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+[8] [9 <./plots//Cifar10_full_dataset_acc_vs_epoch.jpg> <./plots//Cifar10_training_datasetsize_vs_test_acc.jpg> <./plots//test_acc_vs_epoch_subset_size_5000.jpg> <./plots//test_acc_vs_epoch_subset_size_20000.jpg> <./plots//test_acc_vs_epoch_subset_size_30000.jpg> <./plots//test_acc_vs_epoch_subset_size_45000.jpg>] [10 <./plots//powerlaw_train_accs_hat_epoch.jpg> <./plots//powerlaw_val_accs_hat_epoch.jpg> <./plots//powerlaw_train_accs_hat_epoch_sq.jpg> <./plots//powerlaw_val_accs_hat_epoch_sq.jpg> <./plots//powerlaw_train_accs_hat_total_n_epoch.jpg> <./plots//powerlaw_val_accs_hat_total_n_epoch.jpg>]
+<./plots//cifar10/accuracy_distribution.jpg, id=64, 433.62pt x 289.08pt>
+File: ./plots//cifar10/accuracy_distribution.jpg Graphic file (type jpg)
+<use ./plots//cifar10/accuracy_distribution.jpg>
+Package pdftex.def Info: ./plots//cifar10/accuracy_distribution.jpg  used on input line 463.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//emnist/accuracy_distribution.jpg, id=65, 433.62pt x 289.08pt>
+File: ./plots//emnist/accuracy_distribution.jpg Graphic file (type jpg)
+<use ./plots//emnist/accuracy_distribution.jpg>
+Package pdftex.def Info: ./plots//emnist/accuracy_distribution.jpg  used on input line 468.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+ [11] [12 <./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg> <./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg> <./plots//cifar10/accuracy_distribution.jpg> <./plots//emnist/accuracy_distribution.jpg>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./plots//emnist/arctan_all_epochs_forward_selection.jpg, id=73, 433.62pt x 289.08pt>
+File: ./plots//emnist/arctan_all_epochs_forward_selection.jpg Graphic file (type jpg)
+<use ./plots//emnist/arctan_all_epochs_forward_selection.jpg>
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection.jpg  used on input line 517.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//emnist/arctan_all_epochs_forward_selection_val.jpg, id=74, 433.62pt x 289.08pt>
+File: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg Graphic file (type jpg)
+<use ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg>
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg  used on input line 523.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+[13] (./technical_report.bbl [14 <./plots//emnist/arctan_all_epochs_forward_selection.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_val.jpg>])
+Overfull \hbox (15.25082pt too wide) in paragraph at lines 542--551
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15] [16] (./technical_report.aux) ) 
 Here is how much of TeX's memory you used:
- 2244 strings out of 480171
- 33818 string characters out of 5894490
- 325526 words of memory out of 5000000
- 20232 multiletter control sequences out of 15000+600000
- 469259 words of font info for 28 fonts, out of 8000000 for 9000
- 59 hyphenation exceptions out of 8191
- 55i,0n,62p,370b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
-/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty:1495:  ==> Fatal error occurred, no output PDF file produced!
+ 6903 strings out of 478287
+ 126645 string characters out of 5849290
+ 440547 words of memory out of 5000000
+ 24995 multiletter control sequences out of 15000+600000
+ 479516 words of font info for 68 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 67i,20n,77p,1724b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on technical_report.pdf (16 pages, 534076 bytes).
+PDF statistics:
+ 165 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+
