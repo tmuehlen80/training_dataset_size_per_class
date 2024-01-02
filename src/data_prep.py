@@ -86,6 +86,7 @@ def prep_data_all_epochs(results: pd.DataFrame,
 
     ### normalize results for train:
     scaler = preprocessing.MinMaxScaler()
+    #scaler = preprocessing.StandardScaler()
     scaler.fit(X = results.iloc[:, 1:])
     results_scaled = pd.DataFrame(scaler.transform(results.iloc[:, 1:]))
     results_scaled.columns = results.iloc[:, 1:].columns
@@ -186,4 +187,3 @@ def prep_data_all_epochs(results: pd.DataFrame,
     
     return results
 
-# next todo: write function for create last eoch only versions.

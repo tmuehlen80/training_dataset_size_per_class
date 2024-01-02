@@ -97,4 +97,13 @@ A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
   J.~Bai, and S.~Chintala, ``Pytorch: An imperative style, high-performance
   deep learning library,'' {\em CoRR}, vol.~abs/1912.01703, 2019.
 
+\bibitem{cohen2017emnist}
+G.~Cohen, S.~Afshar, J.~Tapson, and A.~van Schaik, ``Emnist:an extension of
+  mnist to handwritten letters,'' 2017.
+
+\bibitem{howard2019mobilenetv3}
+A.~Howard, M.~Sandler, G.~Chu, L.-C. Chen, B.~Chen, M.~Tan, W.~W. Y.~Z.
+  RuomingPang2, V.~Vasudevan, Q.~Le, and H.~Adam, ``Searching for
+  mobilenetv3,'' 2019.
+
 \end{thebibliography}
