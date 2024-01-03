@@ -21,7 +21,7 @@
 % youtube video on compiling latex in vscode
 % https://www.youtube.com/watch?v=QK_yc9qSa2w
 \title{Training dataset size prediction when adopting image counts individually per class.}
-\author{Thomas Mühlenstädt}
+\author{Thomas Mühlenstädt, Jelena Frtunikj}
 
 \graphicspath{ {./plots/} }
 \RestyleAlgo{ruled}
@@ -63,27 +63,27 @@ The authors of \cite{alabdulmohsin2022revisiting} revisit the scaling law in vis
 
 Compared to the previous mentioned papers where the scaling law has been empirically determined for a diverse of problem types (supervised, unsupervised, transfer learning) and data types (images, video, text, ) and many NN architectures (Transformers, ConvNets, ...), \cite{hutter2021learning} focuses on the theoretical understanding of the phenomena (error scaling w.r.t. data size n). In finite-dimensional models, the error typically decreases with n - 1/2 or n - 1 , where n is the sample size. ... The author of the paper also argues that noise rapidly improves in time-averaged learning curves for increasing n, which means that the model selection should be based on a cumulative AUC or time-averaged error and not final test error which is often done in practice.
 
-\cite{hoffmann2022training}
-\cite{alabdulmohsin2022revisiting}
-\cite{hutter2021learning}
-\cite{mahmood2022data}
-\cite{rosenfeld2019constructive}
-\cite{sorscher2023neural}
-\cite{sun2017revisiting}
-\cite{cho2016data}
-\cite{hestness2017deep}
+% \cite{hoffmann2022training}
+% \cite{alabdulmohsin2022revisiting}
+% \cite{hutter2021learning}
+% \cite{mahmood2022data}
+% \cite{rosenfeld2019constructive}
+% \cite{sorscher2023neural}
+% \cite{sun2017revisiting}
+% \cite{cho2016data}
+% \cite{hestness2017deep}
 
-\begin{itemize}
-    \item https://arxiv.org/pdf/2203.15556.pdf
-    \item https://arxiv.org/pdf/2207.01725.pdf
-    \item https://arxiv.org/pdf/2206.14486.pdf
-    \item https://arxiv.org/pdf/2209.06640.pdf
-    \item https://arxiv.org/pdf/2102.04074.pdf
-    \item https://arxiv.org/pdf/1909.12673.pdf
-    \item https://arxiv.org/pdf/1707.02968.pdf
-    \item https://arxiv.org/abs/1511.06348
-    \item https://arxiv.org/pdf/1712.00409.pdf
-\end{itemize}
+% \begin{itemize}
+%     \item https://arxiv.org/pdf/2203.15556.pdf
+%     \item https://arxiv.org/pdf/2207.01725.pdf
+%     \item https://arxiv.org/pdf/2206.14486.pdf
+%     \item https://arxiv.org/pdf/2209.06640.pdf
+%     \item https://arxiv.org/pdf/2102.04074.pdf
+%     \item https://arxiv.org/pdf/1909.12673.pdf
+%     \item https://arxiv.org/pdf/1707.02968.pdf
+%     \item https://arxiv.org/abs/1511.06348
+%     \item https://arxiv.org/pdf/1712.00409.pdf
+% \end{itemize}
 
 \section{Overview suggested method}
 
@@ -215,14 +215,15 @@ For the unconstrained case, candidate points can be suggested by using TBD. In t
 
 \section{scaling law model fitting}
 
-\begin{itemize}
-    \item Power law scaling (\cite{mahmood2022data}): $g_{\omega}(n) = \omega_1 n^{\omega_2} + \omega_3$.
-    \item Arctan scaling: $g_{\omega}(n) = \frac{200}{\pi} \arctan(\omega_1 \frac{\pi}{2}n + \omega_2) + \omega_3$
-    \item logarithmic scaling: $g_{\omega}(n) = \omega_1 \log(n + \omega_2) + \omega_3$
-    \item Algebraic root: $g_{\omega}(n) = \frac{100n}{1 + \| \omega_1 n\|^{1/\omega_2}} + \omega_3$
-    \item For each of these models, we can replace $n$ by a linear combination of $n_c$, the class counts: $n$
-    \item Another model class used here is a logistic regression, as this naturally expands from a one dimensional (i.e. just using the overall training dataset size $n$) to the multidimensional use case (Using seperate class counts).
-\end{itemize}
+The so far standard way of fitting a model to the data is a non-linear least squares fit (cite something) with different types of underlying model equations, all depending on the overall training dataset size $n$.
+Non-linear least squares are implemented in the scipy function \verb|curve_fit| (\cite{2020SciPy}).
+The power law scaling (\cite{mahmood2022data}) is a frequently chosen option: $g_{\omega}(n) = \omega_1 n^{\omega_2} + \omega_3$.
+But also arctan scaling ($g_{\omega}(n) = \frac{200}{\pi} \arctan(\omega_1 \frac{\pi}{2}n + \omega_2) + \omega_3$),
+logarithmic scaling ($g_{\omega}(n) = \omega_1 \log(n + \omega_2) + \omega_3$) and
+algebraic root ()$g_{\omega}(n) = \frac{100n}{1 + \| \omega_1 n\|^{1/\omega_2}} + \omega_3$) are possible choices (cite something).
+For each of these models, we can replace $n$ by a linear combination of $n_c$ with a parameter $\beta_c$: $\sum_{c = 1}^C \beta_c n_c$.
+Another modification which is done here is to use a combination of different modelling functions, specifically a combination of the powerlaw model and an arctan model.
+Also, as the modifications introduced above might result in a high number of model effects for datasets with many classes, forward selection as a feature selection method is applied in one of the examples to only include features which actually have a predictive power.
 
 \section{Experiments using CIFAR10}
 
@@ -483,17 +484,24 @@ Overall, the descriptive analysis did not yield any concerns in terms of outlier
     \item Also, directly using all classes as features for the model is possible but not necessarily recommendable due to the high number of classes.
     \item Hence, an interative modeling approach has been chosen here, specifically a forward selection appoach using a residual sum of squares as selection criterion. 
     \item $$y = a + c* \arctan{\left(\sum_{j = 1}^{J}{\theta_j x_j} + b \right)}$$
-    \item The selection of which
+    \item The selection of which features are included is detemined by forward selection. In short, in forward selection, an empty model is initialized, and iteratively new features are added to the model which are minimising the residual sum of squares, given the already chosen features from previous steps.
+    \item An important aspect in this method is the set of candidate features. Here the following set of features is used: all class labels, total training dataset size, epoch and all 2 factor interactions of these features, which results here in a total of 1225 candidate features.
+    \item From these candidates features have been added until the reduction of residual sum of square between two runs of feature selections is below 0.1.
+    \item This is to a large degree arbitrary and could be changed to different values.  
+    \item The resulting model has 10 features (see Table \ref{table:param_values_emnist}) which resulted in a model with an $r^2 = 0.987$. While there are some features which are expectedly added (total dataset size, epoch and their interaction), there are also more interesting features selected.
+    \item For example, the interaction between the characters $7$ and $J$ is automatically selected which intuitively makes sense, as these characters are very similar. As the coefficient of this interaction is positive, this indicates that it is beneficial for a higher model performance to have both a high number of images with $7$ and $J$.
 \end{itemize}
 
 
 \begin{table}[h!]
     \centering
-\begin{tabular}{lrl}
-    param\_name &  param\_value &    rss \\
-    a                                  &         0.39 &    -    \\
-    b                                  &        18.25 &    -    \\
-    c                                  &         0.27 &    -    \\
+\begin{tabular}{r|c|c}
+
+    parameter name &  parameter value &    residual sum of squares \\
+    \hline
+    a (arctan)                                  &         0.39 &    -    \\
+    b (arctan)                                  &        18.25 &    -    \\
+    c (arctan)                                  &         0.27 &    -    \\
     total\_training\_size                &        16.29 & 943.86 \\
     epochs\_trained                     &        15.29 & 517.94 \\
     epochs\_trained:total\_training\_size &         9.06 &  23.40 \\
@@ -529,6 +537,13 @@ Overall, the descriptive analysis did not yield any concerns in terms of outlier
 \end{figure}
 \section{Discussion summary}
 
+\begin{itemize}
+    \item The methods presented here are made to not just predict model performance based on overall training dataset size, but specific to available training data per label class.
+    \item Not only, this allows for a more accurate prediction of model performance, it also can be more informative.
+    \item But there are also downsides: The number of trained models needs to be far higher in order to fit more detailed models.
+    \item Hence this appoach is not necessarily meaningful for situations where only a limited training budget is available.
+    \item Further improvements of this method are to modify it for unbalanced training datasets and also to modify it for other tasks than classification.
+\end{itemize}
 \pagebreak
 \bibliographystyle{ieeetr}
 \bibliography{lit}

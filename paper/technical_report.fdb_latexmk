@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex technical_report"] 1704234401 "technical_report.aux" "technical_report.bbl" "technical_report" 1704234475
+["bibtex technical_report"] 1704317868 "technical_report.aux" "technical_report.bbl" "technical_report" 1704317985
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "lit.bib" 1704223710 8665 dddbbfc8924e967aa30889fec802c977 ""
-  "technical_report.aux" 1704234474 8619 8856232d84fb0455e16cad0a76007567 "pdflatex"
+  "lit.bib" 1704317394 9848 659c78be7a9706ed14c9b364ff412b74 ""
+  "technical_report.aux" 1704317984 8337 c573c8d5b0994db9519a2c4a6c9cc9cd "pdflatex"
   (generated)
   "technical_report.bbl"
   "technical_report.blg"
-["pdflatex"] 1704234473 "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" "technical_report.pdf" "technical_report" 1704234475
+["pdflatex"] 1704317983 "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" "technical_report.pdf" "technical_report" 1704317985
   "/etc/texmf/web2c/texmf.cnf" 1691402520 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" 1704234473 40092 bc840642e511d93d62a0356702a5b15f ""
+  "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" 1704317983 42966 dbb8bebe2cef8989c28a98b49989b619 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -108,10 +108,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1704156765 2799865 28a1cad5970081550d8d696c9efe8f63 ""
   "plots//Cifar10_full_dataset_acc_vs_epoch.jpg" 1691083941 13068 2499ec74a48ee3f877d41dae704e32d0 ""
   "plots//Cifar10_training_datasetsize_vs_test_acc.jpg" 1696107681 16213 7af02e419bbda223c62383f50906cb3d ""
-  "plots//cifar10/accuracy_distribution.jpg" 1704227884 11654 2d190d39cb700f66f1dcbf3149b36393 ""
-  "plots//emnist/accuracy_distribution.jpg" 1704232515 11116 1b19fbad8fc6eec7e0d4dcf09c8ccccb ""
-  "plots//emnist/arctan_all_epochs_forward_selection.jpg" 1704232518 15884 700894f5366bf51bd22c38ef36363e0f ""
-  "plots//emnist/arctan_all_epochs_forward_selection_val.jpg" 1704232519 15763 946d33b8d8c2c668e561ded382239860 ""
+  "plots//cifar10/accuracy_distribution.jpg" 1704234905 11654 2d190d39cb700f66f1dcbf3149b36393 ""
+  "plots//emnist/accuracy_distribution.jpg" 1704234905 11116 1b19fbad8fc6eec7e0d4dcf09c8ccccb ""
+  "plots//emnist/arctan_all_epochs_forward_selection.jpg" 1704234905 15884 700894f5366bf51bd22c38ef36363e0f ""
+  "plots//emnist/arctan_all_epochs_forward_selection_val.jpg" 1704234905 15763 946d33b8d8c2c668e561ded382239860 ""
   "plots//powerlaw_train_accs_hat_epoch.jpg" 1696107681 17171 ba693ba4bb32d3e5e9cebc7c9947b749 ""
   "plots//powerlaw_train_accs_hat_epoch_sq.jpg" 1696107681 16936 e9838a9231d11ff8ea3e550ddbc51737 ""
   "plots//powerlaw_train_accs_hat_total_n_epoch.jpg" 1696107681 17237 a0facdd33fcf024edcee9554a1543367 ""
@@ -124,9 +124,9 @@
   "plots//test_acc_vs_epoch_subset_size_30000.jpg" 1691083941 14196 f8bedf20374868456e6932e39c7c9f76 ""
   "plots//test_acc_vs_epoch_subset_size_45000.jpg" 1691083941 12255 d14af9cad4815a63ddea29bc0291dfef ""
   "plots//test_acc_vs_epoch_subset_size_5000.jpg" 1691083941 16204 4d2baa803116623612f933d0ee91cbb5 ""
-  "technical_report.aux" 1704234474 8619 8856232d84fb0455e16cad0a76007567 "pdflatex"
-  "technical_report.bbl" 1704234401 4259 246a543090c4a16c3e84d753510d771c "bibtex technical_report"
-  "technical_report.tex" 1704234473 40092 bc840642e511d93d62a0356702a5b15f ""
+  "technical_report.aux" 1704317984 8337 c573c8d5b0994db9519a2c4a6c9cc9cd "pdflatex"
+  "technical_report.bbl" 1704317868 4738 414743669a1ffe159438cfc8de3580c3 "bibtex technical_report"
+  "technical_report.tex" 1704317983 42966 dbb8bebe2cef8989c28a98b49989b619 ""
   (generated)
   "technical_report.aux"
   "technical_report.log"
