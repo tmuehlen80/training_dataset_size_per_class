@@ -42,10 +42,6 @@ I.~Alabdulmohsin, B.~Neyshabur, and X.~Zhai, ``Revisiting neural scaling laws
 \bibitem{hutter2021learning}
 M.~Hutter, ``Learning curve theory,'' 2021.
 
-\bibitem{rosenfeld2019constructive}
-J.~S. Rosenfeld, A.~Rosenfeld, Y.~Belinkov, and N.~Shavit, ``A constructive
-  prediction of the generalization error across scales,'' 2019.
-
 \bibitem{Goodfellowetal2016}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
 \newblock MIT Press, 2016.
@@ -81,6 +77,17 @@ NIST/SEMATECH, {\em e-Handbook of Statistical Methods}.
 \bibitem{fedorov1972theory}
 V.~Fedorov, {\em Theory of Optimal Experiments}.
 \newblock Cellular Neurobiology, Academic Press, 1972.
+
+\bibitem{2020SciPy}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
+  E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, S.~J. {van der Walt},
+  M.~Brett, J.~Wilson, K.~J. Millman, N.~Mayorov, A.~R.~J. Nelson, E.~Jones,
+  R.~Kern, E.~Larson, C.~J. Carey, {\.I}.~Polat, Y.~Feng, E.~W. Moore,
+  J.~{VanderPlas}, D.~Laxalde, J.~Perktold, R.~Cimrman, I.~Henriksen, E.~A.
+  Quintero, C.~R. Harris, A.~M. Archibald, A.~H. Ribeiro, F.~Pedregosa, P.~{van
+  Mulbregt}, and {SciPy 1.0 Contributors}, ``{{SciPy} 1.0: Fundamental
+  Algorithms for Scientific Computing in Python},'' {\em Nature Methods},
+  vol.~17, pp.~261--272, 2020.
 
 \bibitem{Cifar10}
 A.~Krizhevsky, V.~Nair, and G.~Hinton, ``Cifar-10 (canadian institute for

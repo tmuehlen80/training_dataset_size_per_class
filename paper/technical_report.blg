@@ -9,43 +9,43 @@ Warning--empty journal in Cifar10
 Warning--empty year in Cifar10
 You've used 23 entries,
             1876 wiz_defined-function locations,
-            588 strings with 7838 characters,
-and the built_in function-call counts, 4623 in all, are:
-= -- 305
-> -- 410
+            593 strings with 8518 characters,
+and the built_in function-call counts, 5214 in all, are:
+= -- 331
+> -- 503
 < -- 0
-+ -- 146
-- -- 123
-* -- 361
-:= -- 771
++ -- 177
+- -- 154
+* -- 438
+:= -- 886
 add.period$ -- 29
 call.type$ -- 23
 change.case$ -- 16
 chr.to.int$ -- 0
 cite$ -- 27
-duplicate$ -- 155
-empty$ -- 434
-format.name$ -- 123
-if$ -- 1050
+duplicate$ -- 168
+empty$ -- 446
+format.name$ -- 154
+if$ -- 1159
 int.to.chr$ -- 0
 int.to.str$ -- 23
-missing$ -- 18
+missing$ -- 19
 newline$ -- 79
 num.names$ -- 23
-pop$ -- 137
+pop$ -- 132
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 80
+skip$ -- 90
 stack$ -- 0
-substring$ -- 30
-swap$ -- 20
+substring$ -- 62
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 26
+while$ -- 29
 width$ -- 25
-write$ -- 184
+write$ -- 187
 (There were 4 warnings)
