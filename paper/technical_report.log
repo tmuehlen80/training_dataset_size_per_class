@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.2)  3 JAN 2024 21:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.2)  7 JAN 2024 20:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -249,7 +249,50 @@ Package tocbibind Note: Using section or other style headings.
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count288
 \l__pdf_internal_box=\box63
-) (./technical_report.aux)
+) (./technical_report.aux
+
+LaTeX Warning: Label `fig_full_dataset_epoch_vs_acc' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig_full_dataset_epoch_vs_acc' multiply defined.
+
+
+LaTeX Warning: Label `fig_traing_subset_size_vs_test_acc' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig_traing_subset_size_vs_test_acc' multiply defined.
+
+
+LaTeX Warning: Label `fig:subsetsize5000' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subsetsize5000' multiply defined.
+
+
+LaTeX Warning: Label `fig:subsetsize20000' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subsetsize20000' multiply defined.
+
+
+LaTeX Warning: Label `fig:subsetsize30000' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subsetsize30000' multiply defined.
+
+
+LaTeX Warning: Label `fig:subsetsize45000' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:subsetsize45000' multiply defined.
+
+
+LaTeX Warning: Label `fig:emnist_prediction_plot_val' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:emnist_prediction_plot_val' multiply defined.
+
+)
 \openout1 = `technical_report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -353,36 +396,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
-<./plots//Cifar10_full_dataset_acc_vs_epoch.jpg, id=34, 433.62pt x 289.08pt>
-File: ./plots//Cifar10_full_dataset_acc_vs_epoch.jpg Graphic file (type jpg)
-<use ./plots//Cifar10_full_dataset_acc_vs_epoch.jpg>
-Package pdftex.def Info: ./plots//Cifar10_full_dataset_acc_vs_epoch.jpg  used on input line 252.
+<./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg, id=34, 433.62pt x 289.08pt>
+File: ./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg Graphic file (type jpg)
+<use ./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg>
+Package pdftex.def Info: ./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg  used on input line 252.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//Cifar10_training_datasetsize_vs_test_acc.jpg, id=35, 433.62pt x 289.08pt>
-File: ./plots//Cifar10_training_datasetsize_vs_test_acc.jpg Graphic file (type jpg)
-<use ./plots//Cifar10_training_datasetsize_vs_test_acc.jpg>
-Package pdftex.def Info: ./plots//Cifar10_training_datasetsize_vs_test_acc.jpg  used on input line 258.
+<./plots//cifar10/Cifar10_training_datasetsize_vs_test_acc.jpg, id=35, 433.62pt x 289.08pt>
+File: ./plots//cifar10/Cifar10_training_datasetsize_vs_test_acc.jpg Graphic file (type jpg)
+<use ./plots//cifar10/Cifar10_training_datasetsize_vs_test_acc.jpg>
+Package pdftex.def Info: ./plots//cifar10/Cifar10_training_datasetsize_vs_test_acc.jpg  used on input line 258.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
  [7]
-<./plots//test_acc_vs_epoch_subset_size_5000.jpg, id=42, 433.62pt x 289.08pt>
-File: ./plots//test_acc_vs_epoch_subset_size_5000.jpg Graphic file (type jpg)
-<use ./plots//test_acc_vs_epoch_subset_size_5000.jpg>
-Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_5000.jpg  used on input line 272.
+<./plots//cifar10/test_acc_vs_epoch_subset_size_5000.jpg, id=42, 433.62pt x 289.08pt>
+File: ./plots//cifar10/test_acc_vs_epoch_subset_size_5000.jpg Graphic file (type jpg)
+<use ./plots//cifar10/test_acc_vs_epoch_subset_size_5000.jpg>
+Package pdftex.def Info: ./plots//cifar10/test_acc_vs_epoch_subset_size_5000.jpg  used on input line 272.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//test_acc_vs_epoch_subset_size_20000.jpg, id=43, 433.62pt x 289.08pt>
-File: ./plots//test_acc_vs_epoch_subset_size_20000.jpg Graphic file (type jpg)
-<use ./plots//test_acc_vs_epoch_subset_size_20000.jpg>
-Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_20000.jpg  used on input line 278.
+<./plots//cifar10/test_acc_vs_epoch_subset_size_20000.jpg, id=43, 433.62pt x 289.08pt>
+File: ./plots//cifar10/test_acc_vs_epoch_subset_size_20000.jpg Graphic file (type jpg)
+<use ./plots//cifar10/test_acc_vs_epoch_subset_size_20000.jpg>
+Package pdftex.def Info: ./plots//cifar10/test_acc_vs_epoch_subset_size_20000.jpg  used on input line 278.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//test_acc_vs_epoch_subset_size_30000.jpg, id=44, 433.62pt x 289.08pt>
-File: ./plots//test_acc_vs_epoch_subset_size_30000.jpg Graphic file (type jpg)
-<use ./plots//test_acc_vs_epoch_subset_size_30000.jpg>
-Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_30000.jpg  used on input line 284.
+<./plots//cifar10/test_acc_vs_epoch_subset_size_30000.jpg, id=44, 433.62pt x 289.08pt>
+File: ./plots//cifar10/test_acc_vs_epoch_subset_size_30000.jpg Graphic file (type jpg)
+<use ./plots//cifar10/test_acc_vs_epoch_subset_size_30000.jpg>
+Package pdftex.def Info: ./plots//cifar10/test_acc_vs_epoch_subset_size_30000.jpg  used on input line 284.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//test_acc_vs_epoch_subset_size_45000.jpg, id=45, 433.62pt x 289.08pt>
-File: ./plots//test_acc_vs_epoch_subset_size_45000.jpg Graphic file (type jpg)
-<use ./plots//test_acc_vs_epoch_subset_size_45000.jpg>
-Package pdftex.def Info: ./plots//test_acc_vs_epoch_subset_size_45000.jpg  used on input line 290.
+<./plots//cifar10/test_acc_vs_epoch_subset_size_45000.jpg, id=45, 433.62pt x 289.08pt>
+File: ./plots//cifar10/test_acc_vs_epoch_subset_size_45000.jpg Graphic file (type jpg)
+<use ./plots//cifar10/test_acc_vs_epoch_subset_size_45000.jpg>
+Package pdftex.def Info: ./plots//cifar10/test_acc_vs_epoch_subset_size_45000.jpg  used on input line 290.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 270--294
@@ -390,107 +433,148 @@ Underfull \hbox (badness 10000) in paragraph at lines 270--294
  []
 
 
-Overfull \hbox (60.2619pt too wide) in paragraph at lines 301--314
+Overfull \hbox (40.44368pt too wide) in paragraph at lines 302--315
  [][] 
  []
 
 
-Overfull \hbox (72.72961pt too wide) in paragraph at lines 320--327
+Overfull \hbox (72.72961pt too wide) in paragraph at lines 341--348
  [][] 
  []
 
 
-Overfull \hbox (20.05173pt too wide) in paragraph at lines 333--340
+Overfull \hbox (20.05173pt too wide) in paragraph at lines 354--361
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./plots//powerlaw_train_accs_hat_epoch.jpg, id=46, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_train_accs_hat_epoch.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_train_accs_hat_epoch.jpg>
-Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_epoch.jpg  used on input line 373.
+<./plots//cifar10/powerlaw_train_accs_hat_epoch.jpg, id=46, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_train_accs_hat_epoch.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_train_accs_hat_epoch.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_train_accs_hat_epoch.jpg  used on input line 394.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//powerlaw_val_accs_hat_epoch.jpg, id=47, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_val_accs_hat_epoch.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_val_accs_hat_epoch.jpg>
-Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_epoch.jpg  used on input line 379.
+<./plots//cifar10/powerlaw_val_accs_hat_epoch.jpg, id=47, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_val_accs_hat_epoch.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_val_accs_hat_epoch.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_val_accs_hat_epoch.jpg  used on input line 400.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//powerlaw_train_accs_hat_epoch_sq.jpg, id=48, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_train_accs_hat_epoch_sq.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_train_accs_hat_epoch_sq.jpg>
-Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_epoch_sq.jpg  used on input line 391.
+<./plots//cifar10/powerlaw_train_accs_hat_epoch_sq.jpg, id=48, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_train_accs_hat_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_train_accs_hat_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_train_accs_hat_epoch_sq.jpg  used on input line 412.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//powerlaw_val_accs_hat_epoch_sq.jpg, id=49, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_val_accs_hat_epoch_sq.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_val_accs_hat_epoch_sq.jpg>
-Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_epoch_sq.jpg  used on input line 397.
+<./plots//cifar10/powerlaw_val_accs_hat_epoch_sq.jpg, id=49, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_val_accs_hat_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_val_accs_hat_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_val_accs_hat_epoch_sq.jpg  used on input line 418.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//powerlaw_train_accs_hat_total_n_epoch.jpg, id=50, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_train_accs_hat_total_n_epoch.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_train_accs_hat_total_n_epoch.jpg>
-Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_total_n_epoch.jpg  used on input line 409.
+<./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch.jpg, id=50, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch.jpg  used on input line 430.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//powerlaw_val_accs_hat_total_n_epoch.jpg, id=51, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_val_accs_hat_total_n_epoch.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_val_accs_hat_total_n_epoch.jpg>
-Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_total_n_epoch.jpg  used on input line 415.
+<./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch.jpg, id=51, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch.jpg  used on input line 436.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg, id=52, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg>
-Package pdftex.def Info: ./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg  used on input line 426.
+<./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch_sq.jpg, id=52, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch_sq.jpg  used on input line 447.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg, id=53, 433.62pt x 289.08pt>
-File: ./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg Graphic file (type jpg)
-<use ./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg>
-Package pdftex.def Info: ./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg  used on input line 432.
+<./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch_sq.jpg, id=53, 433.62pt x 289.08pt>
+File: ./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch_sq.jpg Graphic file (type jpg)
+<use ./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch_sq.jpg>
+Package pdftex.def Info: ./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch_sq.jpg  used on input line 453.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-[8 <./plots//Cifar10_full_dataset_acc_vs_epoch.jpg> <./plots//Cifar10_training_datasetsize_vs_test_acc.jpg>] [9 <./plots//test_acc_vs_epoch_subset_size_5000.jpg> <./plots//test_acc_vs_epoch_subset_size_20000.jpg> <./plots//test_acc_vs_epoch_subset_size_30000.jpg> <./plots//test_acc_vs_epoch_subset_size_45000.jpg> <./plots//powerlaw_train_accs_hat_epoch.jpg> <./plots//powerlaw_val_accs_hat_epoch.jpg>] [10 <./plots//powerlaw_train_accs_hat_epoch_sq.jpg> <./plots//powerlaw_val_accs_hat_epoch_sq.jpg> <./plots//powerlaw_train_accs_hat_total_n_epoch.jpg> <./plots//powerlaw_val_accs_hat_total_n_epoch.jpg> <./plots//powerlaw_train_accs_hat_total_n_epoch_sq.jpg> <./plots//powerlaw_val_accs_hat_total_n_epoch_sq.jpg>]
-<./plots//cifar10/accuracy_distribution.jpg, id=65, 433.62pt x 289.08pt>
+[8 <./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg> <./plots//cifar10/Cifar10_training_datasetsize_vs_test_acc.jpg>] [9 <./plots//cifar10/test_acc_vs_epoch_subset_size_5000.jpg> <./plots//cifar10/test_acc_vs_epoch_subset_size_20000.jpg> <./plots//cifar10/test_acc_vs_epoch_subset_size_30000.jpg> <./plots//cifar10/test_acc_vs_epoch_subset_size_45000.jpg> <./plots//cifar10/powerlaw_train_accs_hat_epoch.jpg> <./plots//cifar10/powerlaw_val_accs_hat_epoch.jpg>] [10 <./plots//cifar10/powerlaw_train_accs_hat_epoch_sq.jpg> <./plots//cifar10/powerlaw_val_accs_hat_epoch_sq.jpg> <./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch.jpg> <./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch.jpg> <./plots//cifar10/powerlaw_train_accs_hat_total_n_epoch_sq.jpg> <./plots//cifar10/powerlaw_val_accs_hat_total_n_epoch_sq.jpg>]
+<./plots//emnist/full_dataset_acc_vs_epoch.jpg, id=65, 433.62pt x 289.08pt>
+File: ./plots//emnist/full_dataset_acc_vs_epoch.jpg Graphic file (type jpg)
+<use ./plots//emnist/full_dataset_acc_vs_epoch.jpg>
+Package pdftex.def Info: ./plots//emnist/full_dataset_acc_vs_epoch.jpg  used on input line 485.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//emnist/training_datasetsize_vs_test_acc.jpg, id=66, 433.62pt x 289.08pt>
+File: ./plots//emnist/training_datasetsize_vs_test_acc.jpg Graphic file (type jpg)
+<use ./plots//emnist/training_datasetsize_vs_test_acc.jpg>
+Package pdftex.def Info: ./plots//emnist/training_datasetsize_vs_test_acc.jpg  used on input line 491.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//emnist/test_acc_vs_epoch_subset_size_10000.jpg, id=67, 433.62pt x 289.08pt>
+File: ./plots//emnist/test_acc_vs_epoch_subset_size_10000.jpg Graphic file (type jpg)
+<use ./plots//emnist/test_acc_vs_epoch_subset_size_10000.jpg>
+Package pdftex.def Info: ./plots//emnist/test_acc_vs_epoch_subset_size_10000.jpg  used on input line 504.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//emnist/test_acc_vs_epoch_subset_size_30000.jpg, id=68, 433.62pt x 289.08pt>
+File: ./plots//emnist/test_acc_vs_epoch_subset_size_30000.jpg Graphic file (type jpg)
+<use ./plots//emnist/test_acc_vs_epoch_subset_size_30000.jpg>
+Package pdftex.def Info: ./plots//emnist/test_acc_vs_epoch_subset_size_30000.jpg  used on input line 510.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg, id=69, 433.62pt x 289.08pt>
+File: ./plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg Graphic file (type jpg)
+<use ./plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg>
+Package pdftex.def Info: ./plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg  used on input line 516.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+<./plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg, id=70, 433.62pt x 289.08pt>
+File: ./plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg Graphic file (type jpg)
+<use ./plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg>
+Package pdftex.def Info: ./plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg  used on input line 522.
+(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--526
+[]$[]$$[]$
+ []
+
+<./plots//cifar10/accuracy_distribution.jpg, id=71, 433.62pt x 289.08pt>
 File: ./plots//cifar10/accuracy_distribution.jpg Graphic file (type jpg)
 <use ./plots//cifar10/accuracy_distribution.jpg>
-Package pdftex.def Info: ./plots//cifar10/accuracy_distribution.jpg  used on input line 464.
+Package pdftex.def Info: ./plots//cifar10/accuracy_distribution.jpg  used on input line 534.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//emnist/accuracy_distribution.jpg, id=66, 433.62pt x 289.08pt>
+<./plots//emnist/accuracy_distribution.jpg, id=72, 433.62pt x 289.08pt>
 File: ./plots//emnist/accuracy_distribution.jpg Graphic file (type jpg)
 <use ./plots//emnist/accuracy_distribution.jpg>
-Package pdftex.def Info: ./plots//emnist/accuracy_distribution.jpg  used on input line 469.
+Package pdftex.def Info: ./plots//emnist/accuracy_distribution.jpg  used on input line 539.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
- [11 <./plots//cifar10/accuracy_distribution.jpg> <./plots//emnist/accuracy_distribution.jpg>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./plots//emnist/arctan_all_epochs_forward_selection.jpg, id=70, 433.62pt x 289.08pt>
+[11] [12 <./plots//emnist/full_dataset_acc_vs_epoch.jpg> <./plots//emnist/training_datasetsize_vs_test_acc.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_10000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_30000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg>] [13 <./plots//cifar10/accuracy_distribution.jpg> <./plots//emnist/accuracy_distribution.jpg>]
+<./plots//emnist/arctan_all_epochs_forward_selection.jpg, id=83, 433.62pt x 289.08pt>
 File: ./plots//emnist/arctan_all_epochs_forward_selection.jpg Graphic file (type jpg)
 <use ./plots//emnist/arctan_all_epochs_forward_selection.jpg>
-Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection.jpg  used on input line 525.
-(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-<./plots//emnist/arctan_all_epochs_forward_selection_val.jpg, id=71, 433.62pt x 289.08pt>
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection.jpg  used on input line 596.
+(pdftex.def)             Requested size: 139.06364pt x 92.71039pt.
+<./plots//emnist/arctan_all_epochs_forward_selection_val.jpg, id=84, 433.62pt x 289.08pt>
 File: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg Graphic file (type jpg)
 <use ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg>
-Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg  used on input line 531.
-(pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-[12] [13 <./plots//emnist/arctan_all_epochs_forward_selection.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_val.jpg>] (./technical_report.bbl [14])
-Overfull \hbox (15.25082pt too wide) in paragraph at lines 557--566
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg  used on input line 602.
+(pdftex.def)             Requested size: 139.06364pt x 92.71039pt.
+<./plots//emnist/arctan_all_epochs_forward_selection_train.jpg, id=85, 433.62pt x 289.08pt>
+File: ./plots//emnist/arctan_all_epochs_forward_selection_train.jpg Graphic file (type jpg)
+<use ./plots//emnist/arctan_all_epochs_forward_selection_train.jpg>
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_train.jpg  used on input line 608.
+(pdftex.def)             Requested size: 139.06364pt x 92.71039pt.
+ [14 <./plots//emnist/arctan_all_epochs_forward_selection.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_val.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_train.jpg>] [15] (./technical_report.bbl [16])
+Overfull \hbox (15.25082pt too wide) in paragraph at lines 634--643
  [][] 
  []
 
-[15] (./technical_report.aux) ) 
+[17] (./technical_report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6904 strings out of 478287
- 126637 string characters out of 5849290
- 437556 words of memory out of 5000000
- 24996 multiletter control sequences out of 15000+600000
+ 6927 strings out of 478287
+ 129227 string characters out of 5849290
+ 437611 words of memory out of 5000000
+ 24999 multiletter control sequences out of 15000+600000
  479516 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,20n,77p,1724b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on technical_report.pdf (15 pages, 539719 bytes).
+Output written on technical_report.pdf (17 pages, 635503 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 175 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
