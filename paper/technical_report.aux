@@ -41,14 +41,14 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Descriptive results for the models fitted to Cifar10 dataset.\relax }}{8}{}\protected@file@percent }
 \newlabel{fig:desc_plots_cifar10}{{1}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}model fitting results}{8}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Powerlaw model overview.\relax }}{8}{}\protected@file@percent }
-\newlabel{table:model_overview}{{1}{8}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Estimated parameters for model (1).\relax }}{8}{}\protected@file@percent }
-\newlabel{table:param_values_full_model_epoch_sq}{{2}{8}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Estimated parameters for model (0).\relax }}{8}{}\protected@file@percent }
-\newlabel{table:param_values_full_model}{{3}{8}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Estimated parameters for model (3).\relax }}{8}{}\protected@file@percent }
-\newlabel{table:param_values_total_n_epoch}{{4}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Powerlaw model overview for cifar10 dataset.\relax }}{8}{}\protected@file@percent }
+\newlabel{table:cifar_model_overview}{{1}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Estimated parameters for model (0).\relax }}{8}{}\protected@file@percent }
+\newlabel{table:cifar10_param_values_model_0}{{2}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Estimated parameters for model (1).\relax }}{8}{}\protected@file@percent }
+\newlabel{table:cifar10_param_values_model_1}{{3}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Estimated parameters for model (2).\relax }}{8}{}\protected@file@percent }
+\newlabel{table:cifar10_param_values_model_2}{{4}{8}}
 \newlabel{fig:subsetsize5000}{{2a}{9}}
 \newlabel{sub@fig:subsetsize5000}{{a}{9}}
 \newlabel{fig:subsetsize20000}{{2b}{9}}
@@ -59,41 +59,49 @@
 \newlabel{sub@fig:subsetsize45000}{{d}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Test accuracies vs. epochs for different number of training dataset sizes.\relax }}{9}{}\protected@file@percent }
 \newlabel{fig:accuracy_vs_epoch_by_subset_size}{{2}{9}}
-\newlabel{fig:powerlaw_acc_hat_epoch_train}{{3a}{9}}
-\newlabel{sub@fig:powerlaw_acc_hat_epoch_train}{{a}{9}}
-\newlabel{fig:powerlaw_acc_hat_epoch_val}{{3b}{9}}
-\newlabel{sub@fig:powerlaw_acc_hat_epoch_val}{{b}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Prediction plot for powerlaw function 0.\relax }}{9}{}\protected@file@percent }
-\newlabel{fig:powerlaw_acc_hat_epoch}{{3}{9}}
-\newlabel{fig:powerlaw_acc_hat_epoch_sq_train}{{4a}{10}}
-\newlabel{sub@fig:powerlaw_acc_hat_epoch_sq_train}{{a}{10}}
-\newlabel{fig:powerlaw_acc_hat_epoch_sq_val}{{4b}{10}}
-\newlabel{sub@fig:powerlaw_acc_hat_epoch_sq_val}{{b}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Prediction plot for powerlaw function 1.\relax }}{10}{}\protected@file@percent }
-\newlabel{fig:powerlaw_acc_hat_epoch_sq}{{4}{10}}
-\newlabel{fig:powerlaw_accs_hat_total_n_epoch_train}{{5a}{10}}
-\newlabel{sub@fig:powerlaw_accs_hat_total_n_epoch_train}{{a}{10}}
-\newlabel{fig:powerlaw_accs_hat_total_n_epoch_val}{{5b}{10}}
-\newlabel{sub@fig:powerlaw_accs_hat_total_n_epoch_val}{{b}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Prediction plot for powerlaw function 3.\relax }}{10}{}\protected@file@percent }
-\newlabel{fig:powerlaw_accs_hat_total_n_epoch}{{5}{10}}
-\newlabel{fig:powerlaw_accs_hat_total_n_epoch_sq_train}{{6a}{10}}
-\newlabel{sub@fig:powerlaw_accs_hat_total_n_epoch_sq_train}{{a}{10}}
-\newlabel{fig:powerlaw_accs_hat_total_n_epoch_sq_val}{{6b}{10}}
-\newlabel{sub@fig:powerlaw_accs_hat_total_n_epoch_sq_val}{{b}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Prediction plot for powerlaw function 4.\relax }}{10}{}\protected@file@percent }
-\newlabel{fig:powerlaw_accs_hat_total_n_epoch_sq}{{6}{10}}
+\newlabel{fig:powerlaw_acc_classes_linear_epoch_linear_train}{{3a}{9}}
+\newlabel{sub@fig:powerlaw_acc_classes_linear_epoch_linear_train}{{a}{9}}
+\newlabel{fig:powerlaw_acc_classes_linear_epoch_linear_val}{{3b}{9}}
+\newlabel{sub@fig:powerlaw_acc_classes_linear_epoch_linear_val}{{b}{9}}
+\newlabel{fig:powerlaw_acc_classes_linear_epoch_linear_forward_val}{{3c}{9}}
+\newlabel{sub@fig:powerlaw_acc_classes_linear_epoch_linear_forward_val}{{c}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Prediction plots for powerlaw function 0 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right).\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:powerlaw_prediction_plot_fct_0}{{3}{9}}
+\newlabel{fig:powerlaw_acc_classes_arctan_epoch_artan_train}{{4a}{9}}
+\newlabel{sub@fig:powerlaw_acc_classes_arctan_epoch_artan_train}{{a}{9}}
+\newlabel{fig:powerlaw_acc_classes_arctan_epoch_artan_val}{{4b}{9}}
+\newlabel{sub@fig:powerlaw_acc_classes_arctan_epoch_artan_val}{{b}{9}}
+\newlabel{fig:powerlaw_acc_classes_arctan_epoch_artan_forward_val}{{4c}{9}}
+\newlabel{sub@fig:powerlaw_acc_classes_arctan_epoch_artan_forward_val}{{c}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Prediction plots for powerlaw function 1 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right).\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:powerlaw_prediction_plot_fct_1}{{4}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Estimated parameters for model (3).\relax }}{10}{}\protected@file@percent }
+\newlabel{table:cifar10_param_values_model_3}{{5}{10}}
+\newlabel{fig:powerlaw_acc_total_n_epoch_train}{{5a}{10}}
+\newlabel{sub@fig:powerlaw_acc_total_n_epoch_train}{{a}{10}}
+\newlabel{fig:powerlaw_acc_total_n_epoch_val}{{5b}{10}}
+\newlabel{sub@fig:powerlaw_acc_total_n_epoch_val}{{b}{10}}
+\newlabel{fig:powerlaw_acc_total_n_epoch_forward_val}{{5c}{10}}
+\newlabel{sub@fig:powerlaw_acc_total_n_epoch_forward_val}{{c}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Prediction plots for powerlaw function 2 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right).\relax }}{10}{}\protected@file@percent }
+\newlabel{fig:powerlaw_prediction_plot_fct_2}{{5}{10}}
+\newlabel{fig:powerlaw_acc_total_n_arctan_epoch_arctan_train}{{6a}{10}}
+\newlabel{sub@fig:powerlaw_acc_total_n_arctan_epoch_arctan_train}{{a}{10}}
+\newlabel{fig:powerlaw_acc_total_n_arctan_epoch_arctan_val}{{6b}{10}}
+\newlabel{sub@fig:powerlaw_acc_total_n_arctan_epoch_arctan_val}{{b}{10}}
+\newlabel{fig:powerlaw_acc_total_n_arctan_epoch_arctan_forward_val}{{6c}{10}}
+\newlabel{sub@fig:powerlaw_acc_total_n_arctan_epoch_arctan_forward_val}{{c}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Prediction plots for powerlaw function 3 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right).\relax }}{10}{}\protected@file@percent }
+\newlabel{fig:powerlaw_prediction_plot_fct_3}{{6}{10}}
 \citation{cohen2017emnist}
 \citation{howard2019mobilenetv3}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Estimated parameters for model (4).\relax }}{11}{}\protected@file@percent }
-\newlabel{table:param_values_total_n_epoch_sq}{{5}{11}}
+\newlabel{fig_full_dataset_epoch_vs_acc}{{7a}{11}}
+\newlabel{sub@fig_full_dataset_epoch_vs_acc}{{a}{11}}
+\newlabel{fig_traing_subset_size_vs_test_acc}{{7b}{11}}
+\newlabel{sub@fig_traing_subset_size_vs_test_acc}{{b}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Descriptive results for the models fitted to emnist dataset.\relax }}{11}{}\protected@file@percent }
+\newlabel{fig:desc_plots_emnist}{{7}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}emnist}{11}{}\protected@file@percent }
-\newlabel{fig_full_dataset_epoch_vs_acc}{{7a}{12}}
-\newlabel{sub@fig_full_dataset_epoch_vs_acc}{{a}{12}}
-\newlabel{fig_traing_subset_size_vs_test_acc}{{7b}{12}}
-\newlabel{sub@fig_traing_subset_size_vs_test_acc}{{b}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Descriptive results for the models fitted to emnist dataset.\relax }}{12}{}\protected@file@percent }
-\newlabel{fig:desc_plots_emnist}{{7}{12}}
 \newlabel{fig:subsetsize5000}{{8a}{12}}
 \newlabel{sub@fig:subsetsize5000}{{a}{12}}
 \newlabel{fig:subsetsize20000}{{8b}{12}}
@@ -104,12 +112,15 @@
 \newlabel{sub@fig:subsetsize45000}{{d}{12}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Test accuracies vs. epochs for different number of training dataset sizes for the emnist dataset.\relax }}{12}{}\protected@file@percent }
 \newlabel{fig:emnist_accuracy_vs_epoch_by_subset_size}{{8}{12}}
-\newlabel{fig:accuracy_distribution_cifar10}{{\caption@xref {fig:accuracy_distribution_cifar10}{ on input line 535}}{13}}
-\newlabel{sub@fig:accuracy_distribution_cifar10}{{}{13}}
-\newlabel{fig:accuracy_distribution_emnist}{{\caption@xref {fig:accuracy_distribution_emnist}{ on input line 540}}{13}}
-\newlabel{sub@fig:accuracy_distribution_emnist}{{}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Accuracy distributions for models fitted to cifar10 and emnist dataset.\relax }}{13}{}\protected@file@percent }
-\newlabel{fig:acc_distributions}{{9}{13}}
+\newlabel{fig:accuracy_distribution_cifar10}{{\caption@xref {fig:accuracy_distribution_cifar10}{ on input line 603}}{12}}
+\newlabel{sub@fig:accuracy_distribution_cifar10}{{}{12}}
+\newlabel{fig:accuracy_distribution_emnist}{{\caption@xref {fig:accuracy_distribution_emnist}{ on input line 608}}{12}}
+\newlabel{sub@fig:accuracy_distribution_emnist}{{}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Accuracy distributions for models fitted to cifar10 and emnist dataset.\relax }}{12}{}\protected@file@percent }
+\newlabel{fig:acc_distributions}{{9}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Discussion summary}{13}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Estimated parameters for forward selected model for the emnist dataset.\relax }}{14}{}\protected@file@percent }
+\newlabel{table:param_values_emnist}{{6}{14}}
 \newlabel{fig:emnist_prediction_plot_train}{{10a}{14}}
 \newlabel{sub@fig:emnist_prediction_plot_train}{{a}{14}}
 \newlabel{fig:emnist_prediction_plot_val}{{10b}{14}}
@@ -118,9 +129,6 @@
 \newlabel{sub@fig:emnist_prediction_plot_val}{{c}{14}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Prediction plots for arctan forward selection model for emnist dataset\relax }}{14}{}\protected@file@percent }
 \newlabel{fig:emnist_prediction_plot}{{10}{14}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Estimated parameters for forward selected model for the emnist dataset.\relax }}{14}{}\protected@file@percent }
-\newlabel{table:param_values_emnist}{{6}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Discussion summary}{14}{}\protected@file@percent }
 \bibstyle{ieeetr}
 \bibdata{lit}
 \bibcite{hestness2017deep}{1}
@@ -141,12 +149,12 @@
 \bibcite{Nist_2012_eng_stats}{16}
 \bibcite{fedorov1972theory}{17}
 \bibcite{2020SciPy}{18}
-\@writefile{toc}{\contentsline {section}{References}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{15}{}\protected@file@percent }
 \bibcite{Cifar10}{19}
 \bibcite{he2015resnet}{20}
 \bibcite{pytorch}{21}
 \bibcite{cohen2017emnist}{22}
 \bibcite{howard2019mobilenetv3}{23}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces First few lines of the underlying data table used for fitting the powerlaw models.\relax }}{17}{}\protected@file@percent }
-\newlabel{table:datatable_results}{{7}{17}}
-\gdef \@abspage@last{17}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces First few lines of the underlying data table used for fitting the powerlaw models.\relax }}{16}{}\protected@file@percent }
+\newlabel{table:datatable_results}{{7}{16}}
+\gdef \@abspage@last{16}
