@@ -36,6 +36,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     sns.scatterplot(data = results, x="accs", y = y_hat_name, hue = "epochs_trained")
     plt.xlim((0.05, 0.9))
     plt.ylim((0.05, 0.9))
+    plt.ylabel("accs predicted")
     plt.axline((0, 0), slope=1, color="black", linestyle=(0, (5, 5)))
     plt.text(x=0.1, y=0.8, s=f"r-sq: {np.round(metrics.r2_score(results.accs, results[y_hat_name]), 3)}", bbox=props)
     plt.legend(loc = 'lower right')
@@ -52,6 +53,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     sns.scatterplot(data = results_val, x="accs", y = y_hat_name, hue = "epochs_trained")
     plt.xlim((0.05, 0.9))
     plt.ylim((0.05, 0.9))
+    plt.ylabel("accs predicted")
     plt.axline((0, 0), slope=1, color="black", linestyle=(0, (5, 5)))
     plt.text(x=0.1, y=0.8, s=f"r-sq: {np.round(metrics.r2_score(results_val.accs, results_val[y_hat_name]), 3)}", bbox=props)
     plt.legend(loc = 'lower right')
@@ -64,6 +66,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     acc_pred = func(xdata_pred, *params)
     results_pred_orig["acc_pred"] = acc_pred
     sns.scatterplot(data = results_pred_orig, x = "total_training_size", y = "acc_pred", hue="epochs_trained")
+    plt.ylabel("accs predicted")
     plt.legend(loc = 'lower right')
     plt.show()
     display(results_pred_orig)
@@ -76,6 +79,7 @@ def plotting_printing_all_epochs(func, model_type, y_hat_name, xdata, y, param_n
     sns.scatterplot(data = results_4500_orig, x="accs", y = y_hat_name, hue = "epochs_trained")
     plt.xlim((0.7, 0.9))
     plt.ylim((0.7, 0.9))
+    plt.ylabel("accs predicted")
     plt.legend(loc = 'lower right')
     if saving_plots:
         plt.savefig(f"paper/plots/{dataset}/{model_type}_{y_hat_name}_4500.jpg")
@@ -144,11 +148,12 @@ def plot_forward_testing(data, model_type, y_hat_name, dataset, plt_suffix:str =
     sns.scatterplot(data = data, x="accs", y = y_hat_name+"_forward", hue = y_hat_name+"_step")
     plt.xlim((0, 0.95))
     plt.ylim((0, 0.95))
-    plt.plot((0, 1), (0, 1),linestyle="dotted")
+    plt.plot((0, 1), (0, 1), linestyle="dotted")
     #plt.legend()#
     non_na_mask = ~data[y_hat_name+'_forward'].isna()
     plt.text(x=0.1, y=0.8, s=f"r-sq: {np.round(metrics.r2_score(data.accs.loc[non_na_mask], data[y_hat_name+'_forward'].loc[non_na_mask]), 3)}", bbox=props)
     plt.legend(loc = 'lower right')
+    plt.ylabel("accs predicted")
     if saving_plots:
         plt.savefig(f"paper/plots/{dataset}/{model_type}_{y_hat_name}_{plt_suffix}_forward_testing.jpg")
     plt.show()
