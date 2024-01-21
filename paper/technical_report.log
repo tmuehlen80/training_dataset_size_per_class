@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.2)  21 JAN 2024 01:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.2)  21 JAN 2024 20:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -556,28 +556,31 @@ File: ./plots//emnist/accuracy_distribution.jpg Graphic file (type jpg)
 <use ./plots//emnist/accuracy_distribution.jpg>
 Package pdftex.def Info: ./plots//emnist/accuracy_distribution.jpg  used on input line 568.
 (pdftex.def)             Requested size: 172.00249pt x 114.66835pt.
-[11] [12 <./plots//emnist/full_dataset_acc_vs_epoch.jpg> <./plots//emnist/training_datasetsize_vs_test_acc.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_10000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_30000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg>] [13 <./plots//cifar10/accuracy_distribution.jpg> <./plots//emnist/accuracy_distribution.jpg>]
-<./plots//emnist/arctan_all_epochs_forward_selection.jpg, id=87, 433.62pt x 289.08pt>
+[11] [12 <./plots//emnist/full_dataset_acc_vs_epoch.jpg> <./plots//emnist/training_datasetsize_vs_test_acc.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_10000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_30000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg> <./plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./plots//emnist/arctan_all_epochs_forward_selection.jpg, id=83, 433.62pt x 289.08pt>
 File: ./plots//emnist/arctan_all_epochs_forward_selection.jpg Graphic file (type jpg)
 <use ./plots//emnist/arctan_all_epochs_forward_selection.jpg>
-Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection.jpg  used on input line 625.
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection.jpg  used on input line 626.
 (pdftex.def)             Requested size: 139.06364pt x 92.71039pt.
-<./plots//emnist/arctan_all_epochs_forward_selection_val.jpg, id=88, 433.62pt x 289.08pt>
+<./plots//emnist/arctan_all_epochs_forward_selection_val.jpg, id=84, 433.62pt x 289.08pt>
 File: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg Graphic file (type jpg)
 <use ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg>
-Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg  used on input line 631.
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_val.jpg  used on input line 632.
 (pdftex.def)             Requested size: 139.06364pt x 92.71039pt.
-<./plots//emnist/arctan_all_epochs_forward_selection_train.jpg, id=89, 433.62pt x 289.08pt>
+<./plots//emnist/arctan_all_epochs_forward_selection_train.jpg, id=85, 433.62pt x 289.08pt>
 File: ./plots//emnist/arctan_all_epochs_forward_selection_train.jpg Graphic file (type jpg)
 <use ./plots//emnist/arctan_all_epochs_forward_selection_train.jpg>
-Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_train.jpg  used on input line 637.
+Package pdftex.def Info: ./plots//emnist/arctan_all_epochs_forward_selection_train.jpg  used on input line 638.
 (pdftex.def)             Requested size: 139.06364pt x 92.71039pt.
- [14 <./plots//emnist/arctan_all_epochs_forward_selection.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_val.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_train.jpg>] [15] (./technical_report.bbl [16])
-Overfull \hbox (15.25082pt too wide) in paragraph at lines 663--672
+[13 <./plots//cifar10/accuracy_distribution.jpg> <./plots//emnist/accuracy_distribution.jpg>] [14 <./plots//emnist/arctan_all_epochs_forward_selection.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_val.jpg> <./plots//emnist/arctan_all_epochs_forward_selection_train.jpg>] (./technical_report.bbl [15])
+Overfull \hbox (15.25082pt too wide) in paragraph at lines 664--673
  [][] 
  []
 
-[17] (./technical_report.aux)
+[16] (./technical_report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -591,10 +594,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  67i,20n,77p,1724b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on technical_report.pdf (17 pages, 695353 bytes).
+Output written on technical_report.pdf (16 pages, 695138 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
+ 176 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
