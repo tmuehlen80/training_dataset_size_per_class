@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex technical_report"] 1705798749 "technical_report.aux" "technical_report.bbl" "technical_report" 1705798808
+["bibtex technical_report"] 1705869983 "technical_report.aux" "technical_report.bbl" "technical_report" 1705870355
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "lit.bib" 1705767419 10028 bb0e0ee0bfafe07711c8d6a7640de822 ""
-  "technical_report.aux" 1705798808 10765 a0fe5caf452db81eba5488bfe9b2d86a "pdflatex"
+  "lit.bib" 1705798916 10028 bb0e0ee0bfafe07711c8d6a7640de822 ""
+  "technical_report.aux" 1705870355 10766 da91329316b8c23d923de2a65a21d2d2 "pdflatex"
   (generated)
   "technical_report.bbl"
   "technical_report.blg"
-["pdflatex"] 1705798807 "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" "technical_report.pdf" "technical_report" 1705798808
+["pdflatex"] 1705870354 "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" "technical_report.pdf" "technical_report" 1705870355
   "/etc/texmf/web2c/texmf.cnf" 1691402520 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" 1705798806 50236 9c9cd754d1c760c862ea2cac23ecbbf4 ""
+  "/home/ubuntu/repos/training_dataset_size_per_class/paper/technical_report.tex" 1705870354 50271 e6e23a07c93609a4607107d53728ea63 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -135,9 +135,9 @@
   "plots//emnist/test_acc_vs_epoch_subset_size_60000.jpg" 1704321509 12788 aa7b07c51371a962c85530295bfd8288 ""
   "plots//emnist/test_acc_vs_epoch_subset_size_90000.jpg" 1704321509 11697 2629240e63ed78fa3f78d5a7a20ccc05 ""
   "plots//emnist/training_datasetsize_vs_test_acc.jpg" 1704321509 13051 ad7040b47347e3326d34c837d7537a06 ""
-  "technical_report.aux" 1705798808 10765 a0fe5caf452db81eba5488bfe9b2d86a "pdflatex"
-  "technical_report.bbl" 1705798749 4871 ceb9f1c026c1f47c7d3c264cd6bde9c5 "bibtex technical_report"
-  "technical_report.tex" 1705798806 50236 9c9cd754d1c760c862ea2cac23ecbbf4 ""
+  "technical_report.aux" 1705870355 10766 da91329316b8c23d923de2a65a21d2d2 "pdflatex"
+  "technical_report.bbl" 1705869983 4871 ceb9f1c026c1f47c7d3c264cd6bde9c5 "bibtex technical_report"
+  "technical_report.tex" 1705870354 50271 e6e23a07c93609a4607107d53728ea63 ""
   (generated)
   "technical_report.aux"
   "technical_report.log"

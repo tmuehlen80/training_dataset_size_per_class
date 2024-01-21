@@ -88,10 +88,10 @@ Compared to the previous mentioned papers where the scaling law has been empiric
 The task considered here is image classification, i.e. we aim to find a model $y = f_{\theta}(x)$, where $x$ is an image tensor and $y$ being a one hot encoding for the classes contained in the dataset.
 The training data consists of $k$ classes, which each class $j$ having $n_j^{max}$ labeled images in the training dataset with $n^{max} = \sum_{j= 1}^k n_j^{max}$ being the overall number of training images.
 Also, for completeness, we assume there is a labelled test and/or validation data set used to calculate the performance of a trained model $f_{\hat{\theta}}(x)$.
-The performance metric we are using here is accurcy, denoted as $a(f_{\hat{\theta}}(.))$. But in general, the methods described here would also for other metrics like e.g. $f_1$ scores, precision or recall.
+The performance metric we are using here is accuracy, denoted as $a(f_{\hat{\theta}}(.))$. But in general, the methods described here would also for other metrics like e.g. $f_1$ scores, precision or recall.
 We refer to standard literature like e.g. \cite{Goodfellowetal2016} and \cite{Bishop2006PatternRecog} for these general details.
-Most of the literatur for neural scaling laws focusses on assuming different training dataset sizes $n^{train}$ for a number of different training jobs, i.e. to find a function $g_{\omega}(n^{train})$ which can predict the chosen performance metric for different training dataset sizes.
-This means implicitely that each class has the same importance for the performance.
+Most of the literature for neural scaling laws focusses on assuming different training dataset sizes $n^{train}$ for a number of different training jobs, i.e. to find a function $g_{\omega}(n^{train})$ which can predict the chosen performance metric for different training dataset sizes.
+This means implicitly that each class has the same importance for the performance.
 But this is not necessarily true, some classes might be more difficult to train on than others.
 Hence here an approach is taken, which allows to estimate the importance of training images from each class individually.
 Also, the compute budget is an important aspect of performance, hence we also aim at considering how different number of training epochs affects performance.
@@ -113,24 +113,24 @@ For a given training dataset, a smaller subset can sampled randomly by assigning
 Although in general this is a good sampling strategy in many contexts, here it is not what is desired.
 Especially for large training datasets, the law of large numbers says that the class proportions in the sample subset will be very similar to the class distribution in the complete training dataset.
 In order to achieve a number of divers training datasets, both with respect to the total size as well with respect to the class proportions, an algorithm is suggested in the following.
-It takes some motivation from a special case of statisticial design of experiments, notably constrained space filling mixture designs. Please see \cite{gomes_hal_spacefilling_mixtures} for more information on spacefilling mixture desigsn.
+It takes some motivation from a special case of statistical design of experiments, notably constrained space filling mixture designs. Please see \cite{gomes_hal_spacefilling_mixtures} for more information on spacefilling mixture desigsn.
 Design of experiments is a set of methods, originating back to as early as Sir Ronald Fishers book on the topic \cite{fisher_1935}, which all aim at collecting optimal data for fitting a specific statistical/mathematical model. This might be simple linear models (cite something) or much more complex
 models like nonlinear, multidimensional models \cite{myers2009response}, \cite{Goos_Jones_optDoE_2011}. In contrast to many machine learning and active learning methods, design of experiments
 often aims at finding the minimal dataset with which a model can be fitted.
 Mixture designs in general are a class of designs originating out of chemistry: The composition of some ingredients to a chemical experiments needs to sum up to 100\%, see for example \cite{Nist_2012_eng_stats}, chapter 5.5.4 for a short introduction.
 The reason why this is fitting here is that, given a target dataset size $n_{subset}$, we want to create a number of different combinations of training datasets, which all have the same total number of training images but distributed differently according to the different classes.
 There are different ways to describe the optimality of a design of experiments. Here we will choose an optimality criterion which is considered space filling, the so called maximin optimality criterion, which tries to maximize the minimum (euclidean) distance between any two data points in the design.
-The reasoning behind this is that having a datapoint $d_2 \in D$ , which are very close to a datapoint $d_1 \in D$ does not bringing additional benefit, as we have learned already the response of
+The reasoning behind this is that having a data point $d_2 \in D$ , which are very close to a data point $d_1 \in D$ does not bringing additional benefit, as we have learned already the response of
 our target function $g(.)$ at position $d_1$.
 This choice is to a big degree subjective. We have chosen this optimality criterion here, as we want to generate a wide spread of different combinations of class counts, given a fixed overall count of training images.
 The design needs to be constrained, as for larger subset sizes, it might happen that a purely randomly generated combination of class counts is for some classes higher than the maximum number of available training images per class.
-The algorithm to find an optimal design has 2 stages: In the initilization phase, a design is constructed which is fullfilling the following: each row summing up to the target dataset size and the constraint for the maximum number of images per class is full filled.
-In the second stage, this design is improved iteratively by a pointwise exchange algorith: The pair of design points with the minimal distance is found and one of them is replaced by a new, randomly generated candidate design point.
-If the maximin criterion for the new candidate design is improved compared to the previosly best design, the candidate design is accepted as new best design.
+The algorithm to find an optimal design has 2 stages: In the initialization phase, a design is constructed which is fullfilling the following: each row summing up to the target dataset size and the constraint for the maximum number of images per class is full filled.
+In the second stage, this design is improved iteratively by a pointwise exchange algorithm: The pair of design points with the minimal distance is found and one of them is replaced by a new, randomly generated candidate design point.
+If the maximin criterion for the new candidate design is improved compared to the previously best design, the candidate design is accepted as new best design.
 Otherwise, the candidate design is rejected. This process is repeated a fixed number of times.
 Similar pointwise optimization procedures are quite common in the area of design experiments and are rooting back to early references like \cite{fedorov1972theory}.
 One important detail in this process is how design points are suggested, during the initialization phase as well as during the optimization phase.
-For the unconstrained case, candidate points can be suggested by using TBD. In the case of heavliy constrained mixture, a heuristc can be applied to increase the chance to sample a candidate fullfilling the constraint. For details, please check in the appendix.
+For the unconstrained case, candidate points can be suggested by using TBD. In the case of heavily constrained mixture, a heuristic can be applied to increase the chance to sample a candidate fullfilling the constraint. For details, please check in the appendix.
 
 
 
@@ -144,14 +144,14 @@ For the unconstrained case, candidate points can be suggested by using TBD. In t
         Define $n_{doe} \in \mathbb{N}$: The number of rows to be generated\;
         Define $n_{cmax} \in \mathbb{N}$: The maximum number of training images in each class\;
         Define $n_{opt} \in \mathbb{N}$: The maximum number of iterations used for optimizing the DoE\;
-        Define $n_{candidate} \in \mathbb{N}$: The batch size for generating candidate mixture datapoints\;
+        Define $n_{candidate} \in \mathbb{N}$: The batch size for generating candidate mixture data points\;
     }
     \Initialize{\;
         \dosemic
         Intialize $\tilde{doe}$ as empty dataframe\;
         Set $n_{doe} = 0$\;
         \While{$\tilde{n}_{doe} < n_{doe}$}{
-            Create a batch of candidate mixture datapoints $candidates$ of size $n_{candidate}$\;
+            Create a batch of candidate mixture data points $candidates$ of size $n_{candidate}$\;
             For each candidate point: Delete candidate point, if for any class $c$ $n^{c} > n_{cmax}$\;
             Add all remaining rows of $candidates$ to $\tilde{doe}$\;
             set $n_{doe} = $ number of rows of $doe$ \;
@@ -165,7 +165,7 @@ For the unconstrained case, candidate points can be suggested by using TBD. In t
         \For{$i \leq n_{opt}$}{
             Set $\tilde{doe} = doe_{opt}$\;
             Determine point pair $k \neq j$ with $\|x_k - x_j\| = \min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|) $\;
-            Create a candidate point $\tilde{x}$ with $max(x^{c}) \leq n_{cmax}$ (fullfilling class constraints)\;
+            Create a candidate point $\tilde{x}$ with $max(x^{c}) \leq n_{cmax}$ (fulfilling class constraints)\;
             In $\tilde{doe}$, replace point $x_k$ with $\tilde{x}$\;
             \If{$\min_{x_t \neq x_b \in \tilde{doe}}(\|x_t - x_b\|) > Mm$}{
                 Set $doe_{opt} = \tilde{doe}$\;
@@ -230,13 +230,13 @@ The CIFAR10 dataset \cite{Cifar10} is a well known benchmark dataset for image c
 It consists of 50000 training images, in 10 classes, each class having 5000 training images of the shape 32x32x3 and 10000 test images of the same shape, also equally distributed across the 10 classes.
 As a model to be fitted, a standard Resnet18 architecture \cite{he2015resnet} has been used as standard model here, as implemented in the pytorch \cite{pytorch} modell zoo.
 For optimizing this model, a standard SGD optimizer with cross entropy loss has been used with $learning_rate = 0.1, momentum=0.9$ and $weight_decay=1e-4$, together with a learning rate scheduler, reducing the the learning at 100 (which is also clearly visible at severals accuracy vs. epoch plots, e.g. Figure \ref{fig_full_dataset_epoch_vs_acc}) and 150 epochs.
-For data preparation/transformations, random horizontol flipping, random cropping and batch normalization with predefined mean and standard deviation  has been used.
+For data preparation/transformations, random horizontel flipping, random cropping and batch normalization with predefined mean and standard deviation  has been used.
 With these settings, validation dataset accuracies up to 84\% have been achieved.
 There are for sure more advanced model architectures for the Cifar10 dataset, however we aimed at balancing an at least medium performant model with a having a reasonable training time, as the training process is repeated here a high number of times.
-For the experiemtns done here, we applied the algorithm from section 4 here with the following settings:
+For the experiments done here, we applied the algorithm from section 4 here with the following settings:
 As subset sizes we have chosen $[5000, 10000, \dots, 40000, 45000]$. For each subset size a design of experiments according to Algorithm \ref{alg:two} with 30 different settings has been created for training a function $g_{\omega}$ as well as a validation dataset with 15 runs per subset size.
 For each training dataset, the same model and hyperparameter settings has been used, training for up to 195 epochs, checking for validation accuracy every 5 epochs.
-To get an impression of the models fitted here, there are a number of descriptive visulizationas in Figures \ref{fig_full_dataset_epoch_vs_acc}, \ref{fig_traing_subset_size_vs_test_acc} and \ref{fig:accuracy_vs_epoch_by_subset_size}. In Figure \ref{fig_full_dataset_epoch_vs_acc} the test set accuracy for the full training dataset across different epochs and 10 repeats is shown.
+To get an impression of the models fitted here, there are a number of descriptive visualizations in Figures \ref{fig_full_dataset_epoch_vs_acc}, \ref{fig_traing_subset_size_vs_test_acc} and \ref{fig:accuracy_vs_epoch_by_subset_size}. In Figure \ref{fig_full_dataset_epoch_vs_acc} the test set accuracy for the full training dataset across different epochs and 10 repeats is shown.
 In Figure \ref{fig_traing_subset_size_vs_test_acc} the test accuracy at 195 training epochs for all created training dataset of different size is plotted. As expected, the performance varies more for smaller total training dataset sizes compared to larger training dataset sizes.
 And in Figure \ref{fig:accuracy_vs_epoch_by_subset_size}, the test accuracy is plotted over training epoch for all training datasets of 4 different training dataset sizes.
 Overall, the descriptive analysis did not yield any concerns in terms of outliers or unexpected behavior of the data.
@@ -512,7 +512,7 @@ For model $(1)$ the classes truck and ship both yielded the highest $\beta_{.,1}
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{emnist/full_dataset_acc_vs_epoch.jpg}
-        \caption{Full training results for 10 seperate training runs (emnist dataset).}
+        \caption{Full training results for 10 separate training runs (emnist dataset).}
         \label{fig_full_dataset_epoch_vs_acc}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
@@ -572,25 +572,26 @@ For model $(1)$ the classes truck and ship both yielded the highest $\beta_{.,1}
     \label{fig:acc_distributions}
 \end{figure}
 
+The emnist dataset is an extension of the famous mnist dataset, which has more classes. The version used here is the balanced emnist dataset, consisting of 47 different characters, each class having 2400 images in the train dataset and 400 images in a validation dataset \cite{cohen2017emnist}.  
+Main motivation to apply the suggested method on this dataset as well is that it contains substantially more label classes, which is often more realistic for real world applications compared to just 10 classes.
+The model architecture used here for the image classification is the \verb|mobilenet_v3_large| model from the pytorch model zoo \cite{howard2019mobilenetv3}.
+As for the cifar10 dataset, the suggested algorithm has been applied with the following details:
 \begin{itemize}
-    \item The emnist dataset is an extension of the famous mnist dataset, which has more classes. The version used here is the balanced emnist dataset, consisting of 47 different characters, each class having 2400 images in the train dataset and 400 images in a validation dataset \cite{cohen2017emnist}.  
-    \item Main motivation to apply the suggested method on this dataset as well is that it contains substantially more label classes, which is often more realistic for real world applications compared to just 10 classes.
-    \item The model architeture used here for the image classification is the \verb|mobilenet_v3_large| model from the pytorch model zoo \cite{howard2019mobilenetv3}.
-    \item As for the cifar dataset, the suggested algorithm has been applied with the following details:
     \item subset sizes $[10000, 20000, \dots, 100000]$, per subset size 140 different settings for the train dataset and 70 different settings for the validation dataset.
     \item For each setting, the \verb|mobilenet_v3_large| model has been fitted, using the SGD optimizer (with learning rate $=0.1$, momentum $=0.9$, weight decay $=1e-4$ and a cross entropy loss function), a batch size of 2048 for 90 epochs. 
-    \item Here, a slightly different modeling approach compared to the cifar10 dataset is chosen. 
-    \item First, the resulting accuracies are differently distributed (please see figure xxx), which motivates to not use a powerlaw, but an arctan model as this allows better for modelling a bimodal dataset.
-    \item Also, directly using all classes as features for the model is possible but not necessarily recommendable due to the high number of classes.
-    \item Hence, an interative modeling approach has been chosen here, specifically a forward selection appoach using a residual sum of squares as selection criterion. 
-    \item $$y = a + c* \arctan{\left(\sum_{j = 1}^{J}{\theta_j x_j} + b \right)}$$
-    \item The selection of which features are included is detemined by forward selection. In short, in forward selection, an empty model is initialized, and iteratively new features are added to the model which are minimising the residual sum of squares, given the already chosen features from previous steps.
-    \item An important aspect in this method is the set of candidate features. Here the following set of features is used: all class labels, total training dataset size, epoch and all 2 factor interactions of these features, which results here in a total of 1225 candidate features.
-    \item From these candidates features have been added until the reduction of residual sum of square between two runs of feature selections is below 0.1.
-    \item This is to a large degree arbitrary and could be changed to different values.  
-    \item The resulting model has 10 features (see Table \ref{table:param_values_emnist}) which resulted in a model with an $r^2 = 0.987$. While there are some features which are expectedly added (total dataset size, epoch and their interaction), there are also more interesting features selected.
-    \item For example, the interaction between the characters $7$ and $J$ is automatically selected which intuitively makes sense, as these characters are very similar. As the coefficient of this interaction is positive, this indicates that it is beneficial for a higher model performance to have both a high number of images with $7$ and $J$.
 \end{itemize}
+
+Here, a slightly different modeling approach compared to the cifar10 dataset is chosen. 
+First, the resulting accuracies are differently distributed (please see figure xxx), which motivates to not use a powerlaw, but an arctan model as this allows better for modelling a bimodal dataset.
+Also, directly using all classes as features for the model is possible but not necessarily recommendable due to the high number of classes.
+Hence, an interactive modeling approach has been chosen here, specifically a forward selection approach using a residual sum of squares as selection criterion. 
+$$y = a + c* \arctan{\left(\sum_{j = 1}^{J}{\theta_j x_j} + b \right)}$$
+The selection of which features are included is determined by forward selection. In short, in forward selection, an empty model is initialized, and iteratively new features are added to the model which are minimising the residual sum of squares, given the already chosen features from previous steps.
+An important aspect in this method is the set of candidate features. Here the following set of features is used: all class labels, total training dataset size, epoch and all 2 factor interactions of these features, which results here in a total of 1225 candidate features.
+From these candidates features have been added until the reduction of residual sum of square between two runs of feature selections is below 0.1.
+This is to a large degree arbitrary and could be changed to different values.  
+The resulting model has 10 features (see Table \ref{table:param_values_emnist}) which resulted in a model with an $r^2 = 0.987$. While there are some features which are expectedly added (total dataset size, epoch and their interaction), there are also more interesting features selected.
+For example, the interaction between the characters $7$ and $J$ is automatically selected which intuitively makes sense, as these characters are very similar. As the coefficient of this interaction is positive, this indicates that it is beneficial for a higher model performance to have both a high number of images with $7$ and $J$.
 
 
 \begin{table}[h!]
@@ -623,33 +624,33 @@ For model $(1)$ the classes truck and ship both yielded the highest $\beta_{.,1}
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=.98\linewidth]{emnist/arctan_all_epochs_forward_selection.jpg}
-        \caption{xxx}
+        \caption{Prediction plot for the emnist training dataset.}
         \label{fig:emnist_prediction_plot_train}
     \end{subfigure}%
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=.98\linewidth]{emnist/arctan_all_epochs_forward_selection_val.jpg}
-        \caption{xxx}
+        \caption{Prediction plot for the emnist test dataset.}
         \label{fig:emnist_prediction_plot_val}
     \end{subfigure}
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=.98\linewidth]{emnist/arctan_all_epochs_forward_selection_train.jpg}
-        \caption{xxx}
+        \caption{Prediction plot for the forward prediction on the test dataset.}
         \label{fig:emnist_prediction_plot_val}
     \end{subfigure}
-    \caption{Prediction plots for arctan forward selection model for emnist dataset}
+    \caption{Prediction plots for arctan forward selection model for emnist dataset.}
     \label{fig:emnist_prediction_plot}
 \end{figure}
+
 \section{Discussion summary}
 
-\begin{itemize}
-    \item The methods presented here are made to not just predict model performance based on overall training dataset size, but specific to available training data per label class.
-    \item Not only, this allows for a more accurate prediction of model performance, it also can be more informative.
-    \item But there are also downsides: The number of trained models needs to be far higher in order to fit more detailed models.
-    \item Hence this appoach is not necessarily meaningful for situations where only a limited training budget is available.
-    \item Further improvements of this method are to modify it for unbalanced training datasets and also to modify it for other tasks than classification.
-\end{itemize}
+The methods presented here are made to not just predict model performance based on overall training dataset size, but specific to available training data per label class.
+Not only, this allows for a more accurate prediction of model performance, it also can be more informative.
+But there are also downsides: The number of trained models needs to be far higher in order to fit more detailed models.
+Hence this approach is not necessarily meaningful for situations where only a limited training budget is available but rather for situations where the cost of labeling is high compared to the cost of training models.
+Further improvements of this method are to modify it for unbalanced training datasets and also to modify it for other tasks than classification.
+
 \pagebreak
 \bibliographystyle{ieeetr}
 \bibliography{lit}
