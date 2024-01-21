@@ -11,6 +11,8 @@
 \usepackage{makecell}
 \usepackage{verbatim}
 \usepackage{mathtools}
+%\usepackage{mathabx} 
+%\usepackage{float}
 \usepackage{subcaption}
 %\usepackage[caption = false]{subfig}
 \usepackage[nottoc]{tocbibind}
@@ -240,7 +242,6 @@ To get an impression of the models fitted here, there are a number of descriptiv
 In Figure \ref{fig_traing_subset_size_vs_test_acc} the test accuracy at 195 training epochs for all created training dataset of different size is plotted. As expected, the performance varies more for smaller total training dataset sizes compared to larger training dataset sizes.
 And in Figure \ref{fig:accuracy_vs_epoch_by_subset_size}, the test accuracy is plotted over training epoch for all training datasets of 4 different training dataset sizes.
 Overall, the descriptive analysis did not yield any concerns in terms of outliers or unexpected behavior of the data.
-
 \subsection{model fitting results}
 
 
@@ -472,38 +473,76 @@ $\beta_{.,2}$     & -     & -     &      &     12.78  &   15.32   & 5.97      & 
 \end{figure}
 
 
-In preparation for model fitting, the data have been transformed in the following way:
+
+% \begin{figure}
+%     \begin{subfigure}{.5\textwidth}
+%         \centering
+%         \includegraphics[width=.8\linewidth]{cifar10/powerlaw_train_accs_hat_epoch_sq.jpg}
+%         \caption{training dataset size = $5000$ images}
+%         \label{fig:powerlaw_acc_hat_epoch_sq_train}
+%     \end{subfigure}%
+%     \begin{subfigure}{.5\textwidth}
+%         \centering
+%         \includegraphics[width=.8\linewidth]{cifar10/powerlaw_val_accs_hat_epoch_sq.jpg}
+%         \caption{training dataset size = $20000$ images}
+%         \label{fig:powerlaw_acc_hat_epoch_sq_val}
+%     \end{subfigure}
+%     \caption{Prediction plot for powerlaw function 1.}
+%     \label{fig:powerlaw_acc_hat_epoch_sq}
+% \end{figure}
+
+
+% \begin{figure}
+%     \begin{subfigure}{.5\textwidth}
+%         \centering
+%         \includegraphics[width=.8\linewidth]{cifar10/powerlaw_train_accs_hat_total_n_epoch.jpg}
+%         \caption{training dataset size = $5000$ images}
+%         \label{fig:powerlaw_accs_hat_total_n_epoch_train}
+%     \end{subfigure}%
+%     \begin{subfigure}{.5\textwidth}
+%         \centering
+%         \includegraphics[width=.8\linewidth]{cifar10/powerlaw_val_accs_hat_total_n_epoch.jpg}
+%         \caption{training dataset size = $20000$ images}
+%         \label{fig:powerlaw_accs_hat_total_n_epoch_val}
+%     \end{subfigure}
+%     \caption{Prediction plot for powerlaw function 3.}
+%     \label{fig:powerlaw_accs_hat_total_n_epoch}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{subfigure}{.5\textwidth}
+%         \centering
+%         \includegraphics[width=.8\linewidth]{cifar10/powerlaw_train_accs_hat_total_n_epoch_sq.jpg}
+%         \caption{training dataset size = $5000$ images}
+%         \label{fig:powerlaw_accs_hat_total_n_epoch_sq_train}
+%     \end{subfigure}%
+%     \begin{subfigure}{.5\textwidth}
+%         \centering
+%         \includegraphics[width=.8\linewidth]{cifar10/powerlaw_val_accs_hat_total_n_epoch_sq.jpg}
+%         \caption{training dataset size = $20000$ images}
+%         \label{fig:powerlaw_accs_hat_total_n_epoch_sq_val}
+%     \end{subfigure}
+%     \caption{Prediction plot for powerlaw function 4.}
+%     \label{fig:powerlaw_accs_hat_total_n_epoch_sq}
+% \end{figure}
+
+
 \begin{itemize}
-    \item All model results for epochs $< 10$ have been removed from the dataset. Mainly because these data are highly variable.
-    \item From the individual class counts an overall training dataset size is calculated per dataset.
-    \item All class counts (also the total dataset size) have been scaled to be between $[0, 1]$, as well as the epochs.
-    \item As the test accuracies are already between $[0,1]$ these have not been further standardized.
+    \item In preparation for model fitting, the data have been transformed in the following way:
+    \item \begin{itemize}
+              \item All model results for epochs $< 10$ have been removed from the dataset. Mainly because these data are highly variable.
+              \item From the individual class counts an overall training dataset size is calculated per dataset.
+              \item All class counts (also the total dataset size) have been scaled to be between $[0, 1]$, as well as the epochs.
+              \item As the test accuracies are already between $[0,1]$ these have not been further standardized.
+          \end{itemize}
+    \item Following these desecriptive plots, a number of different models are fitted, all using the above described dataset.
+    \item In Table \ref{table:cifar_model_overview} an overview of the fitted models is given.
+    \item All of the these models are fitted using the \verb|curve_fit| function from the python package \verb|scipy.optimize|.
+    \item The resulting parameter estimates are shown in Tables \ref{table:cifar10_param_values_model_0} to \ref{table:cifar10_param_values_model_3}.
+    \item For each model, there is a corresponding triple of prediction plots (one for the train data set and one for the validation dataset) in Figures \ref{fig:powerlaw_prediction_plot_fct_0} to \ref{fig:powerlaw_prediction_plot_fct_3}.
+    \item Looking at Table \ref{table:cifar_model_overview}, the model using the individual class counts and the epoch in a linear and squared effect performs best.
+    \item Also, for this model, the prediction plots look most reasonable, scattering rather randomly around the diagonal.
 \end{itemize}
-Following these descriptive plots, a number of different models are fitted, all using the above described dataset.
-In Table \ref{table:cifar_model_overview} an overview of the fitted models is given.
-Model $(0)$ is easily motivated by the idea of generalized linear models: the overall dataset size, as used in many other papers cited here, is replaced by a linear combination of the individual class counts and the epoch, which introduces a larger number of parameters and the capability to account for different importances of the classes. 
-This is in equivalence to many methods in generalized linear models as can be read in the standard reference \cite{GeneralizedLinearModels}.
-However when looking at the modeling results for this model in Figure (\ref{fig:powerlaw_prediction_plot_fct_3}), the prediction plots still look like some signal in the dataset is not captured by the fitted powerlaw model.
-One obvious next step would have been to increase the polynomial degree of the linear combination, i.e. to add interactions and/or quadratic terms. However, this did not deliver a substantial better fit.
-Hence the 2-parameter arctan effect is introduced. It is motivated by the need to have 2 different types of influences of an input: 
-A class count can have a very strong or weak overall maximum effect to the response fitted, and an input can actually achieve it's maximum effect with either very small or only very high counts.
-This is achieved by the 2-parameter arctan effect $\beta_{., 1} \arctan{(\beta_{., 2} x)}$. The $\beta_{.,1}$ parameter describes the maximum possible influence of an input.
-And the $\beta_{., 2}$ describes the necessary size/counts of input $x$ to achieve this maximum influence.
-One advantage of the model over just adding higher degree polynomial terms is also that the parameters have a clear interpretation.
-As a reference to existing literature a standard powerlaw model $(2)$ has been fitted, using both the total training dataset size and the number of epochs.
-In order to have a fair comparison, model $(3)$ is fitted, which is using the same 2-parameter arctan effect as in model $(1)$ for both the total training dataset size as well as for the number of training epochs.
-All of the these models are fitted using the \verb|curve_fit| function from the python package \verb|scipy.optimize|.
-The resulting parameter estimates are shown in Tables \ref{table:cifar10_param_values_model_0} to \ref{table:cifar10_param_values_model_3}.
-For each model, there is a corresponding triple of prediction plots (one for the train data set and one for the validation dataset) in Figures \ref{fig:powerlaw_prediction_plot_fct_0} to \ref{fig:powerlaw_prediction_plot_fct_3}.
-Looking at Table \ref{table:cifar_model_overview}, the model using the individual class counts and the epoch with a 2 parameter arctan model performs best. 
-Also, for this model, the prediction plots look most reasonable, scattering rather randomly close to the diagonal.
-
-
-Looking at the results in Table (\ref{table:cifar_model_overview}), there is a clear winner in terms of model performance: model $(1)$ performs best.
-The additional cost of having more parameters to optimize seems to have paid of, the $r^2$ of model $(2)$ is about 8 to 9 \% better then the other 3 models.
-Also the prediction plots look more randomly scattered around the diagonal.
-Looking at the parameters for model $(1)$ in Table (\ref{table:cifar10_param_values_model_1}), all $\beta$ parameters have positive values (which also holds true for the other models), which was not enforced as an unconstrained optimization has been used.
-For model $(1)$ the classes truck and ship both yielded the highest $\beta_{.,1}$ and $\beta_{.,2}$ value, indicating that these classes would be most meaningful to overweight during additional labeling efforts.
 
 
 \section{emnist}

@@ -104,6 +104,10 @@ A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
   J.~Bai, and S.~Chintala, ``Pytorch: An imperative style, high-performance
   deep learning library,'' {\em CoRR}, vol.~abs/1912.01703, 2019.
 
+\bibitem{GeneralizedLinearModels}
+P.~McCullagh and J.~A. Nelder, {\em Generalized Linear Models}.
+\newblock Chapman and Hall, 1989.
+
 \bibitem{cohen2017emnist}
 G.~Cohen, S.~Afshar, J.~Tapson, and A.~van Schaik, ``Emnist:an extension of
   mnist to handwritten letters,'' 2017.
