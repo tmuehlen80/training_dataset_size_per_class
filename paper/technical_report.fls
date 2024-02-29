@@ -505,6 +505,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT ./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg
 INPUT ./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg
 INPUT ./plots//cifar10/Cifar10_full_dataset_acc_vs_epoch.jpg
@@ -601,7 +602,6 @@ INPUT ./plots//cifar10/powerlaw_all_epochs_accs_hat_total_n_arctan_epoch_arctan_
 INPUT ./plots//cifar10/powerlaw_all_epochs_accs_hat_total_n_arctan_epoch_arctan_val_forward_testing.jpg
 INPUT ./plots//cifar10/powerlaw_all_epochs_accs_hat_total_n_arctan_epoch_arctan_val_forward_testing.jpg
 INPUT ./plots//cifar10/powerlaw_all_epochs_accs_hat_total_n_arctan_epoch_arctan_val_forward_testing.jpg
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT ./plots//emnist/full_dataset_acc_vs_epoch.jpg
 INPUT ./plots//emnist/full_dataset_acc_vs_epoch.jpg
 INPUT ./plots//emnist/full_dataset_acc_vs_epoch.jpg
