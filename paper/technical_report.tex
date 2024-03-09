@@ -37,16 +37,17 @@
 
 \section*{Abstract}
 
-In this paper the question of predicting machine learning classification model performance is considered, when taking into account the number of training examples per class and not just the overall number of training examples.
+This paper targets the question of predicting machine learning classification model performance, when taking into account the number of training examples per class and not just the overall number of training examples.
 This leads to the a combinatorial question, which combinations of number of training examples per class should be considered, given a fixed overall training dataset size. In order to solve this question, an algorithm is suggested which is motivated from special cases of space filling design of experiments.
-The resulting data are modeled using models like powerlaw curves and similar models, extended like generalized linear models: i.e. by replacing the overall training dataset size by a parametrized linear combination of the number of  training examples per label class.
+The resulting data are modeled using models like powerlaw curves and similar models, extended like generalized linear models i.e. by replacing the overall training dataset size by a parametrized linear combination of the number of  training examples per label class. 
+The proposed algorithm has been applied on the CIFAR10 and the EMNIST datasets.
 
 \section{Introduction and relevant related literature}
 
 The main motivation for this research comes from the question of how much more data needs to be labeled to achieved in order to gain a certain machine learning model performance, for example looking at accuracies or $f_1$ scores. There exist many methods in literature dealing with this question, which will be reviewed in the next paragraph. However, just knowing how many additional samples are needed does not answer how these samples should be distributed across different classes. In order to address this question, methods are developed to have a more detailed look at how different distributions among the label classes in a classification dataset are influencing model performance.
 
 
-This paragraph presents the related literature from different domains, e.g. \cite{hestness2017deep} presents empirical characterization of the generalization error and model size growth as training sets grow.  The empirical results show power-law generalization error scaling, resulting in power-law exponents that need to be determined empirically and which influence the "steepness" of the learning curve. Prior work theoretically predict that the scaling exponent $\beta$ is in the range of $-1$ and $-0.5$, however the authors of the paper and the empirical studies performed on real applications show that $\beta$ usually settles between $-0.35$ and $-0.07$. The authors assume that this behaviour is due to fact that the scaling law is dependent on aspects of the problem domain or data distribution. The also authors show that the learning curve begins in the small data region, where models struggle to learn from a small number of training samples i.e. the model performs as “random" guessing. The middle portion of learning curves is the power-law region, where each new training sample provides information that helps models improve predictions on previously unseen samples. The end portion of the curve is called the “irreducible error region” i.e. lower-bound error past which models will be unable to improve. The reasons for such “irreducible” behaviour are e.g. mislabeled samples in the training or validation data sets. The authors have performed empirical studies on four machine learning domains: machine translation, language modeling, image processing, and speech recognition.
+This section presents the related literature from different domains, e.g. \cite{hestness2017deep} presents empirical characterization of the generalization error and model size growth as training sets grow.  The empirical results show power-law generalization error scaling, resulting in power-law exponents that need to be determined empirically and which influence the "steepness" of the learning curve. Prior work theoretically predict that the scaling exponent $\beta$ is in the range of $-1$ and $-0.5$, however the authors of the paper and the empirical studies performed on real applications show that $\beta$ usually settles between $-0.35$ and $-0.07$. The authors assume that this behaviour is due to fact that the scaling law is dependent on aspects of the problem domain or data distribution. The also authors show that the learning curve begins in the small data region, where models struggle to learn from a small number of training samples i.e. the model performs as “random" guessing. The middle portion of learning curves is the power-law region, where each new training sample provides information that helps models improve predictions on previously unseen samples. The end portion of the curve is called the “irreducible error region” i.e. lower-bound error past which models will be unable to improve. The reasons for such “irreducible” behaviour are e.g. mislabeled samples in the training or validation data sets. The authors have performed empirical studies on four machine learning domains: machine translation, language modeling, image processing, and speech recognition.
 
 The authors of \cite{mahmood2022data} go beyond estimation of data set requirements from power law function and investigate three alternative regression functions i.e. Arctan, Logarithmic, Algebraic Root. They show that all of the functions are well-suited towards estimating model performance however each function is almost always either overly optimistic i.e. under-estimating the data requirement or pessimistic i.e. over-estimating. This means that there is no one best regression function for all situations. Through simulation of a data collection workflow the paper shows that incrementally collecting data over multiple rounds and combining those with techniques that under-estimate leads to collecting up to 90\% of the true amount of data needed. In addition the authors introduce a correction factor that can be learned by simulating on prior tasks and which helps to better fitting functions. The fitting of the three regression functions and the benefits of the usage of the correction factor have been applied on classification, detection, and segmentation tasks with different data sets incl. CIFAR10.
 
@@ -60,7 +61,7 @@ Compared to the other papers that mainly target vision tasks, \cite{hoffmann2022
 
 The authors of \cite{alabdulmohsin2022revisiting} revisit the scaling law in vision and language domain and emphasise that in order to achieve benefits of such scaling laws in practice, it is important that scaling laws extrapolate accurately instead of interpolating the learning curve. The paper shows how the scaling exponent c of a power law estimator that extrapolates best can be quite different from the exponent that best fits the given (finite) learning curve. Thus a new estimator (denoted as M4) is proposed which extrapolates more accurately than previous methods such as a power law estimator M2. M2 is a subset of M4 such that using M4 becomes equivalent to using M2 when the observed learning curve resides entirely in the power law regime. Moreover, the M4 estimator has a sigmoid shape and that contributes to the better performance. The new proposed estimator M4 has been validated in several domains such as image classification, neural machine translation, language modelling, and other related tasks. For the validation the authors propose a more rigorous validation of scaling law parameters based on the extrapolation loss.
 
-Compared to the previous mentioned papers where the scaling law has been empirically determined for a diverse of problem types (supervised, unsupervised, transfer learning) and data types (images, video, text, ) and many NN architectures (Transformers, ConvNets, ...), \cite{hutter2021learning} focuses on the theoretical understanding of the phenomena (error scaling w.r.t. data size n). In finite-dimensional models, the error typically decreases with n - 1/2 or n - 1 , where n is the sample size. The author of the paper also argues that noise rapidly improves in time-averaged learning curves for increasing n, which means that the model selection should be based on a cumulative AUC or time-averaged error and not final test error which is often done in practice.
+Compared to the previous mentioned papers where the scaling law has been empirically determined for a diverse of problem types (supervised, unsupervised, transfer learning) and data types (images, video, text) and many NN architectures (Transformers, ConvNets, ...), \cite{hutter2021learning} focuses on the theoretical understanding of the phenomena (error scaling w.r.t. data size n). In finite-dimensional models, the error typically decreases with n - 1/2 or n - 1 , where n is the sample size. The author of the paper also argues that noise rapidly improves in time-averaged learning curves for increasing n, which means that the model selection should be based on a cumulative AUC or time-averaged error and not final test error which is often done in practice.
 
 % \cite{hoffmann2022training}
 % \cite{alabdulmohsin2022revisiting}
@@ -84,7 +85,7 @@ Compared to the previous mentioned papers where the scaling law has been empiric
 %     \item https://arxiv.org/pdf/1712.00409.pdf
 % \end{itemize}
 
-\section{Overview suggested method}
+\section{Method overview}
 
 The task considered in this paper is image classification, i.e. we aim to find a model $y = f_{\theta}(x)$, where $x$ is an image tensor and $y$ being a one hot encoding for the classes contained in the dataset.
 The training data consists of $k$ classes, with each class $j$ having $n_j^{max}$ labeled images in the training dataset with $n^{max} = \sum_{j= 1}^k n_j^{max}$ being the overall number of training images.
@@ -103,7 +104,7 @@ Hence one focus of this paper is to suggest an algorithm which allows generation
 For modeling these data sets and making predictions and importance statements, non-linear models like powerlaw curves are fitted in a way that the input is a linear combination of the training dataset size per class plus the number of epochs trained.
 The coefficients of this linear combination are the parameters to be estimated.
 
-\section{Data generation algorithm}
+\subsection{Data generation algorithm}
 
 %https://core.ac.uk/reader/217880230
 
@@ -212,14 +213,14 @@ The following algorithm shows the complete experiment workflow which uses the ab
 \end{algorithm}
 
 
-\section{Scaling law model fitting}
+\subsection{Scaling law model fitting}
 
 So far the standard way of fitting a model to the data is a non-linear least squares fit with different types of underlying model equations, all depending on the overall training dataset size $n$.
 Non-linear least squares are implemented in the scipy function \verb|curve_fit| (\cite{2020SciPy}).
 The power law scaling (\cite{mahmood2022data}) is a frequently chosen option: $g_{\omega}(n) = \omega_1 n^{\omega_2} + \omega_3$.
 But also arctan scaling ($g_{\omega}(n) = \frac{200}{\pi} \arctan(\omega_1 \frac{\pi}{2}n + \omega_2) + \omega_3$),
 logarithmic scaling ($g_{\omega}(n) = \omega_1 \log(n + \omega_2) + \omega_3$) and
-algebraic root ($g_{\omega}(n) = \frac{100n}{1 + \| \omega_1 n\|^{1/\omega_2}} + \omega_3$) are possible choices (cite something TODO).
+algebraic root ($g_{\omega}(n) = \frac{100n}{1 + \| \omega_1 n\|^{1/\omega_2}} + \omega_3$) are possible choices.
 For each of these models, we can replace $n$ by a linear combination of $n_c$ with a parameter $\beta_c$: $\sum_{c = 1}^C \beta_c n_c$.
 Another modification which is done here is to use a combination of different modelling functions, specifically a combination of the powerlaw model and an arctan model.
 Also, as the modifications introduced above might result in a high number of model effects for datasets with many classes, forward selection as a feature selection method is applied in one of the examples to only include features which actually have a predictive power.
@@ -235,7 +236,7 @@ A standard Resnet18 architecture \cite{he2015resnet} is used for classification 
 For optimizing this model, a standard SGD optimizer with cross entropy loss is used with \verb|learning_rate=0.1, momentum=0.9| and \verb|weight_decay=1e-4|, together with a learning rate scheduler, reducing the the learning at 100 (which is also clearly visible at severals accuracy vs. epoch plots, e.g. Figure \ref{fig_full_dataset_epoch_vs_acc}) and 150 epochs.
 For data preparation/transformations, random horizontel flipping, random cropping and batch normalization with predefined mean and standard deviation is used.
 With these settings, validation dataset accuracies up to 84\% are achieved.
-There are for sure more advanced model architectures for the Cifar10 dataset, however we aimed at balancing an at least medium performant model with a having a reasonable training time, as the training process is repeated here a high number of times.
+There are for sure more advanced model architectures for the CIFAR10 dataset, however we aimed at balancing an at least medium performant model with a having a reasonable training time, as the training process is repeated here a high number of times.
 For the experiments done here, we applied the algorithm from section 4 with the following settings:
 As subset sizes we have chosen $[5000, 10000, \dots, 40000, 45000]$. For each subset size a design of experiments according to Algorithm \ref{alg:two} with 30 different settings has been created for training a function $g_{\omega}$ as well as a validation dataset with 15 runs per subset size.
 For each training dataset, the same model and hyperparameter settings has been used, training for up to 195 epochs, checking for validation accuracy every 5 epochs.
@@ -248,7 +249,7 @@ Overall, the descriptive analysis did not yield any concerns in terms of outlier
 
 \subsection{Model fitting results}
 
-This section shows the results of the different model fittings for the Cifar10 experiment. In preparation for model fitting, the data have been transformed in the following way:
+This section shows the results of the different model fittings for the CIFAR10 experiment. In preparation for model fitting, the data have been transformed in the following way:
 \begin{itemize}
     \item All model results for epochs $< 10$ have been removed from the dataset. Mainly because these data are highly variable.
     \item From the individual class counts an overall training dataset size is calculated per dataset.
@@ -288,7 +289,7 @@ Also, for this model, the prediction plots look most reasonable, i.e. scattering
         \label{fig_traing_subset_size_vs_test_acc_cifar}
     \end{subfigure}
 
-    \caption{Descriptive results for the models fitted to Cifar10 dataset.}
+    \caption{Descriptive results for the models fitted to CIFAR10 dataset.}
     \label{fig:desc_plots_cifar10}
 \end{figure}
 
@@ -319,7 +320,7 @@ Also, for this model, the prediction plots look most reasonable, i.e. scattering
         \label{fig:subsetsize45000}
     \end{subfigure}
 
-    \caption{Test accuracies vs. epochs for different number of training dataset sizes.}
+    \caption{Test accuracies vs. epochs for different number of training dataset sizes for the CIFAR10 experiment.}
     \label{fig:accuracy_vs_epoch_by_subset_size_cifar}
 \end{figure}
 
@@ -339,7 +340,7 @@ Also, for this model, the prediction plots look most reasonable, i.e. scattering
         $total_n$ arctan model &$3$&\makecell{ $\beta_{e, 1} \arctan{(\beta_{e, 2} x_{epoch})}$ \\ $+ \beta_{n, 1} \arctan{(\beta_{n, 2} n_{total})}$} & 0.0018 & 0.0019 & $89.7\%$ & $88.9\%$ \\
         \hline
     \end{tabular}
-    \caption{Powerlaw model overview for cifar10 dataset.}
+    \caption{Powerlaw model overview for CIFAR10 experiment.}
     \label{table:cifar_model_overview}
 \end{table}
 
@@ -422,7 +423,7 @@ $\beta_{.,2}$     & -     & -     &      &     12.78  &   15.32   & 5.97      & 
         \caption{Forward testing on test dataset.}
         \label{fig:powerlaw_acc_classes_linear_epoch_linear_forward_val}
     \end{subfigure}
-    \caption{Prediction plots for powerlaw function 0 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right).}
+    \caption{Prediction plots for powerlaw function 0 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right) for the CIFAR10 experiment.}
     \label{fig:powerlaw_prediction_plot_fct_0}
 \end{figure}
 
@@ -447,7 +448,7 @@ $\beta_{.,2}$     & -     & -     &      &     12.78  &   15.32   & 5.97      & 
         \caption{Forward testing on test dataset.}
         \label{fig:powerlaw_acc_classes_arctan_epoch_artan_forward_val}
     \end{subfigure}
-    \caption{Prediction plots for powerlaw function 1 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right).}
+    \caption{Prediction plots for powerlaw function 1 on the training dataset (left), test dataset (middle) and using forward testing on the test dataset (right) for the CIFAR10 experiment.}
     \label{fig:powerlaw_prediction_plot_fct_1}
 \end{figure}
 
@@ -507,23 +508,23 @@ Also the prediction plots look more randomly scattered around the diagonal.
 Looking at the parameters for model $(1)$ in Table (\ref{table:cifar10_param_values_model_1}), all $\beta$ parameters have positive values (which also holds true for the other models), which was not enforced as an unconstrained optimization has been used.
 For model $(1)$ the classes truck and ship both yielded the highest $\beta_{.,1}$ and $\beta_{.,2}$ value, indicating that these classes would be most meaningful to overweight during additional labeling efforts.
 
-\section{Emnist}
+\section{EMNIST}
 
 \begin{figure}
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{emnist/full_dataset_acc_vs_epoch.jpg}
-        \caption{Full training results for 10 separate training runs (Emnist dataset).}
+        \caption{Full training results for 10 separate training runs (EMNIST dataset).}
         \label{fig_full_dataset_epoch_vs_acc}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{emnist/training_datasetsize_vs_test_acc.jpg}
-        \caption{Test accuracies vs. training dataset sizes (Emnist dataset).}
+        \caption{Test accuracies vs. training dataset sizes (EMNIST dataset).}
         \label{fig_traing_subset_size_vs_test_acc}
     \end{subfigure}
 
-    \caption{Descriptive results for the models fitted to Emnist dataset.}
+    \caption{Descriptive results for the models fitted to EMNIST dataset.}
     \label{fig:desc_plots_emnist}
 \end{figure}
 
@@ -554,7 +555,7 @@ For model $(1)$ the classes truck and ship both yielded the highest $\beta_{.,1}
         \label{fig:subsetsize45000}
     \end{subfigure}
 
-    \caption{Test accuracies vs. epochs for different number of training dataset sizes for the Emnist dataset.}
+    \caption{Test accuracies vs. epochs for different number of training dataset sizes for the EMNIST dataset.}
     \label{fig:emnist_accuracy_vs_epoch_by_subset_size}
 \end{figure}
 
@@ -569,21 +570,21 @@ For model $(1)$ the classes truck and ship both yielded the highest $\beta_{.,1}
         \includegraphics[width=.8\linewidth]{emnist/accuracy_distribution.jpg}
         \label{fig:accuracy_distribution_emnist}
     \end{subfigure}
-    \caption{Accuracy distributions for models fitted to Cifar10 and Emnist dataset.}
+    \caption{Accuracy distributions for models fitted to CIFAR10 and EMNIST dataset.}
     \label{fig:acc_distributions}
 \end{figure}
 
-The Emnist dataset is an extension of the famous Mnist dataset, i.e. has more classes. The version used here is the balanced Emnist dataset, consisting of 47 different characters, each class having 2400 images in the train dataset and 400 images in a validation dataset \cite{cohen2017emnist}.  
+The EMNIST dataset is an extension of the famous MNIST dataset, i.e. has more classes. The version used here is the balanced EMNIST dataset, consisting of 47 different characters, each class having 2400 images in the train dataset and 400 images in a validation dataset \cite{cohen2017emnist}.  
 Main motivation for applying the suggested method on this dataset as well is that it contains substantially more label classes, which is often more realistic for real world applications compared to just 10 classes.
 The model architecture used here for the image classification is the \verb|mobilenet_v3_large| model from the pytorch model zoo \cite{howard2019mobilenetv3}.
-As for the Cifar10 dataset, the suggested algorithm has been applied with the following details:
+As for the CIFAR10 dataset, the suggested algorithm has been applied with the following details:
 \begin{itemize}
     \item Subset sizes $[10000, 20000, \dots, 100000]$, per subset size 140 different settings for the train dataset and 70 different settings for the validation dataset.
     \item For each setting, the \verb|mobilenet_v3_large| model has been fitted, using the SGD optimizer (with learning rate $=0.1$, momentum $=0.9$, weight decay $=1e-4$ and a cross entropy loss function), a batch size of 2048 for 90 epochs. 
 \end{itemize}
 
-Here, a slightly different modeling approach compared to the cifar10 dataset is chosen. 
-First, the resulting accuracies are differently distributed (please see Figure (\ref{fig:acc_distributions})), which motivates to not use a powerlaw, but an arctan model as this allows better for modelling a bimodal dataset.
+Here, a slightly different modeling approach compared to the CIFAR10 dataset is chosen. 
+First, the resulting accuracies are differently distributed (see Figure (\ref{fig:acc_distributions})), which motivates to not use a powerlaw, but an arctan model as this allows better for modelling a bimodal dataset.
 Also, directly using all classes as features for the model is possible but not necessarily recommendable due to the high number of classes.
 Hence, an interactive modeling approach has been chosen here, specifically a forward selection approach using a residual sum of squares as selection criterion. 
 $$y = a + c* \arctan{\left(\sum_{j = 1}^{J}{\theta_j x_j} + b \right)}$$
@@ -615,7 +616,7 @@ For example, the interaction between the characters $7$ and $J$ is automatically
     four:total\_training\_size           &         0.11 &  22.19 \\
     six:O                              &        -0.06 &  22.11 \\
     \end{tabular}
-\caption{Estimated parameters for forward selected model for the emnist dataset.}
+\caption{Estimated parameters for forward selected model for the EMNIST dataset.}
 \label{table:param_values_emnist}
 \end{table}
 
@@ -625,13 +626,13 @@ For example, the interaction between the characters $7$ and $J$ is automatically
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=.98\linewidth]{emnist/arctan_all_epochs_forward_selection.jpg}
-        \caption{Prediction plot for the emnist training dataset.}
+        \caption{Prediction plot for the EMNIST training dataset.}
         \label{fig:emnist_prediction_plot_train}
     \end{subfigure}%
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=.98\linewidth]{emnist/arctan_all_epochs_forward_selection_val.jpg}
-        \caption{Prediction plot for the emnist test dataset.}
+        \caption{Prediction plot for the EMNIST test dataset.}
         \label{fig:emnist_prediction_plot_val}
     \end{subfigure}
     \begin{subfigure}{.33\textwidth}
@@ -640,14 +641,14 @@ For example, the interaction between the characters $7$ and $J$ is automatically
         \caption{Prediction plot for the forward prediction on the test dataset.}
         \label{fig:emnist_prediction_plot_val}
     \end{subfigure}
-    \caption{Prediction plots for arctan forward selection model for emnist dataset.}
+    \caption{Prediction plots for arctan forward selection model for EMNIST dataset.}
     \label{fig:emnist_prediction_plot}
 \end{figure}
 
 \section{Discussion summary}
 
-The methods presented here are made to not just predict model performance based on overall training dataset size, but specific to available training data per label class.
-Moreover, this allows for a more accurate prediction of model performance and it also can be more informative.
+The methods presented in this paper do not just predict model performance based on overall training dataset size, but specific to available training data per label class.
+This allows for a more accurate prediction of model performance and it also can be more informative.
 However, there are also downsides: The number of trained models needs to be far higher in order to fit more detailed models.
 Hence this approach is not necessarily meaningful for situations where only a limited training budget is available but rather for situations where the cost of labeling is high compared to the cost of training models.
 Further improvements of this method could be to modify it for unbalanced training datasets and also to modify it for other tasks than classification.
