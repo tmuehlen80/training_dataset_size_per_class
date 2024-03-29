@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: summerschool_2_pager.aux
+The style file: ieeetr.bst
+Database file #1: lit.bib
+Warning--empty publisher in Nist_2012_eng_stats
+Warning--empty journal in Cifar10
+Warning--empty year in Cifar10
+You've used 14 entries,
+            1876 wiz_defined-function locations,
+            546 strings with 6973 characters,
+and the built_in function-call counts, 3618 in all, are:
+= -- 213
+> -- 386
+< -- 0
++ -- 134
+- -- 120
+* -- 326
+:= -- 632
+add.period$ -- 16
+call.type$ -- 14
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 106
+empty$ -- 278
+format.name$ -- 120
+if$ -- 781
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 10
+newline$ -- 48
+num.names$ -- 14
+pop$ -- 79
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 65
+stack$ -- 0
+substring$ -- 60
+swap$ -- 22
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 19
+width$ -- 16
+write$ -- 113
+(There were 3 warnings)

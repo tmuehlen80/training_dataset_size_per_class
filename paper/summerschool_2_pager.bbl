@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{hestness2017deep}
+J.~Hestness, S.~Narang, N.~Ardalani, G.~Diamos, H.~Jun, H.~Kianinejad, M.~M.~A.
+  Patwary, Y.~Yang, and Y.~Zhou, ``Deep learning scaling is predictable,
+  empirically,'' 2017.
+
+\bibitem{cho2016data}
+J.~Cho, K.~Lee, E.~Shin, G.~Choy, and S.~Do, ``How much data is needed to train
+  a medical image deep learning system to achieve necessary high accuracy?,''
+  2016.
+
+\bibitem{hoffmann2022training}
+J.~Hoffmann, S.~Borgeaud, A.~Mensch, E.~Buchatskaya, T.~Cai, E.~Rutherford,
+  D.~de~Las~Casas, L.~A. Hendricks, J.~Welbl, A.~Clark, T.~Hennigan, E.~Noland,
+  K.~Millican, G.~van~den Driessche, B.~Damoc, A.~Guy, S.~Osindero,
+  K.~Simonyan, E.~Elsen, J.~W. Rae, O.~Vinyals, and L.~Sifre, ``Training
+  compute-optimal large language models,'' 2022.
+
+\bibitem{alabdulmohsin2022revisiting}
+I.~Alabdulmohsin, B.~Neyshabur, and X.~Zhai, ``Revisiting neural scaling laws
+  in language and vision,'' 2022.
+
+\bibitem{muehlenstaedt2024data}
+T.~Mühlenstädt and J.~Frtunikj, ``How much data do you need? part 2:
+  Predicting dl class specific training dataset sizes,'' 2024.
+
+\bibitem{gomes_hal_spacefilling_mixtures}
+C.~Gomes, M.~Claeys-Bruno, and M.~Sergent, ``Space-filling designs for
+  mixtures,'' {\em {Chemometrics and Intelligent Laboratory Systems}},
+  vol.~174, pp.~111--127, Mar. 2018.
+
+\bibitem{Nist_2012_eng_stats}
+NIST/SEMATECH, {\em e-Handbook of Statistical Methods}.
+\newblock 2012.
+
+\bibitem{fedorov1972theory}
+V.~Fedorov, {\em Theory of Optimal Experiments}.
+\newblock Cellular Neurobiology, Academic Press, 1972.
+
+\bibitem{2020SciPy}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
+  E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, S.~J. {van der Walt},
+  M.~Brett, J.~Wilson, K.~J. Millman, N.~Mayorov, A.~R.~J. Nelson, E.~Jones,
+  R.~Kern, E.~Larson, C.~J. Carey, {\.I}.~Polat, Y.~Feng, E.~W. Moore,
+  J.~{VanderPlas}, D.~Laxalde, J.~Perktold, R.~Cimrman, I.~Henriksen, E.~A.
+  Quintero, C.~R. Harris, A.~M. Archibald, A.~H. Ribeiro, F.~Pedregosa, P.~{van
+  Mulbregt}, and {SciPy 1.0 Contributors}, ``{{SciPy} 1.0: Fundamental
+  Algorithms for Scientific Computing in Python},'' {\em Nature Methods},
+  vol.~17, pp.~261--272, 2020.
+
+\bibitem{mahmood2022data}
+R.~Mahmood, J.~Lucas, D.~Acuna, D.~Li, J.~Philion, J.~M. Alvarez, Z.~Yu,
+  S.~Fidler, and M.~T. Law, ``How much more data do i need? estimating
+  requirements for downstream tasks,'' 2022.
+
+\bibitem{Cifar10}
+A.~Krizhevsky, V.~Nair, and G.~Hinton, ``Cifar-10 (canadian institute for
+  advanced research),''
+
+\bibitem{he2015resnet}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
+  recognition,'' 2015.
+
+\bibitem{pytorch}
+A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
+  Z.~Lin, N.~Gimelshein, L.~Antiga, A.~Desmaison, A.~K{\"{o}}pf, E.~Z. Yang,
+  Z.~DeVito, M.~Raison, A.~Tejani, S.~Chilamkurthy, B.~Steiner, L.~Fang,
+  J.~Bai, and S.~Chintala, ``Pytorch: An imperative style, high-performance
+  deep learning library,'' {\em CoRR}, vol.~abs/1912.01703, 2019.
+
+\bibitem{GeneralizedLinearModels}
+P.~McCullagh and J.~A. Nelder, {\em Generalized Linear Models}.
+\newblock Chapman and Hall, 1989.
+
+\end{thebibliography}
